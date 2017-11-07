@@ -2,8 +2,9 @@ package dados;
 
 public class Funcionario extends Usuario {
 
-	public Funcionario(String nome, String email, String telefone) {
-		super(nome, email, telefone);
+	public Funcionario(String nome, String email, int ddd, int numero)  {
+		super(nome, email, ddd, numero);
+		
 	}
 
 }

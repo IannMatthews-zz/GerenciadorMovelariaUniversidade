@@ -4,44 +4,59 @@ public abstract class Usuario {
 	private static int geradorId;
 	private int id;
 	private String nome;
-	private String email;
-	private String telefone;
+	private Localizacao endereco;
+	Contato contato; 
 	
-	public Usuario(String nome, String email, String telefone) {
+	public Usuario(String nome, String email, int ddd, int numero) {
 		geradorId++;
 		this.id = geradorId;
 		this.setNome(nome);
-		this.setEmail(email);
-		this.setTelefone(telefone);
+		//.alterado para adicao do objeto contato
+		contato = new Contato(email,ddd, numero );
+		
+		endereco = new Localizacao();
 	}
-	
+
+	public static int getGeradorId() {
+		return geradorId;
+	}
+
+	public static void setGeradorId(int geradorId) {
+		Usuario.geradorId = geradorId;
+	}
+
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNome() {
 		return nome;
 	}
 
-	private void setNome(String nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
+	public Localizacao getEndereco() {
+		return endereco;
 	}
 
-	private void setEmail(String email) {
-		this.email = email;
+	public void setEndereco(Localizacao endereco) {
+		this.endereco = endereco;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public Contato getContato() {
+		return contato;
 	}
 
-	private void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setContato(Contato contato) {
+		this.contato = contato;
 	}
 	
-	
+
+
 }
