@@ -15,7 +15,6 @@ public class Produto {
 	
 	public Produto(Orcamento orcamento, String nome, double largura, double altura, double profundidade, int portas,
 			int rodas, int gavetas, boolean revestimentoTipoA) {
-		super();
 		this.orcamento = orcamento;
 		this.nome = nome;
 		this.largura = largura;
