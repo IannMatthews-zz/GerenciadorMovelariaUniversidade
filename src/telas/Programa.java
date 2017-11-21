@@ -15,6 +15,8 @@ public class Programa {
 		
 		funcionarios.adicionar(iann);
 		
+		System.out.println(funcionarios.buscar(1).getNome());
+		
 	}
 
 }

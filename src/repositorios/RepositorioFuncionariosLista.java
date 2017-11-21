@@ -40,7 +40,11 @@ public class RepositorioFuncionariosLista implements IRepositorioUsuarios {
 
 	@Override
 	public Usuario buscar(int id) {
-		// TODO Auto-generated method stub
+		for(Funcionario funcionario : funcionarios) {
+			if(funcionario.getId() == id) {
+				return funcionario;
+			}
+		}
 		return null;
 	}
 
