@@ -14,43 +14,46 @@ public class RepositorioFuncionariosLista implements IRepositorioUsuarios {
 	public RepositorioFuncionariosLista() {
 		funcionarios = new ArrayList<Funcionario>();
 	}
-
-	@Override
+	
 	public void adicionar(Usuario u) {
 		funcionarios.add((Funcionario) u);
 		//System.out.println("Funcionario adicionado com sucesso!"); //implementado apenas para testar polimorfismo (estava testando se esse metodo adiciona um cliente)
 	}
-
-	@Override
+	
 	public void remover(Usuario u) {
 		funcionarios.remove((Funcionario)u);
 	}
-
-	@Override
+	
 	public boolean existe(Usuario u) {
-		// TODO Auto-generated method stub
+		if(this.funcionarios.contains(u))
+			return true;
 		return false;
 	}
 
-	@Override
 	public Usuario buscar(Usuario u) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Usuario buscar(int id) {
-		for(Funcionario funcionario : funcionarios) {
-			if(funcionario.getId() == id) {
-				return funcionario;
-			}
+		for(Usuario u2 : funcionarios) {
+			if(u2.getId()==u.getId())
+				return u2;
+			
 		}
 		return null;
 	}
+	
+	public Usuario buscar(int id) {
+		for(Usuario u2 : funcionarios) {
+			if(u2.getId()==id)
+				return u2;
+			
+		}	// TODO Auto-generated method stub
+		return null;
+	}
 
-	@Override
 	public Usuario buscar(String email) {
-		// TODO Auto-generated method stub
+		for(Usuario u2 : funcionarios) {
+			if(u2.getContato().getEmail()==email)
+				return u2;
+			
+		}// TODO Auto-generated method stub
 		return null;
 	}
 
