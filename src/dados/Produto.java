@@ -2,6 +2,8 @@ package dados;
 
 public class Produto {
 
+	private static int contadorId;
+	private int id;
 	private Orcamento orcamento;
 	private String nome;
 	private double largura;
@@ -12,10 +14,9 @@ public class Produto {
 	private int gavetas;
 	private boolean revestimentoTipoA;	
 	
-	
 	public Produto(Orcamento orcamento, String nome, double largura, double altura, double profundidade, int portas,
 			int rodas, int gavetas, boolean revestimentoTipoA) {
-		super();
+		this.id = this.contadorId++;
 		this.orcamento = orcamento;
 		this.nome = nome;
 		this.largura = largura;
@@ -27,7 +28,9 @@ public class Produto {
 		this.revestimentoTipoA = revestimentoTipoA;
 	}
 	
-	
+	public int getId() {
+		return this.id;
+	}
 	
 	public Orcamento getOrcamento() {
 		return orcamento;

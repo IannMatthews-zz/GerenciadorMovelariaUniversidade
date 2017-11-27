@@ -13,10 +13,10 @@ public class Orcamento /*implements iVendedor, iMarceneiro*/ {
 	private Marceneiro marceneiro;
 	
 	
-	public Orcamento(Cliente cliente, Vendedor vendedor, double taxaDeComissao) 
+	public Orcamento(Cliente c1, Vendedor v, double taxaDeComissao) 
 	{
-		this.cliente = cliente;
-		this.vendedor = vendedor;
+		this.cliente = c1;
+		this.vendedor = v;
 		this.TAXA_DE_COMISSAO = taxaDeComissao;
 	}
 	public Orcamento(Marceneiro marceneiro, double taxaDeComissao)
