@@ -29,8 +29,15 @@ public class ControleVendas {
 	{
 		return this.vendas.buscar(cliente);
 	}
+
+	
 	public void cancelar(Venda venda)
 	{
 		vendas.buscar(venda).isVendaCancelada();
+	}
+	public void entregarProdutos(Venda venda)
+	{
+		vendas.buscar(venda).isProdutoEntregue();
+
 	}
 }
