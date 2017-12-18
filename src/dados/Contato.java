@@ -9,7 +9,7 @@ public class Contato
 	
 	public Contato(String email, int dDD, int numero) {
 		this.email = email;
-		DDD = dDD;
+		this.DDD = dDD;
 		this.numero = numero;
 	}
 	

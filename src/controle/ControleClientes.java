@@ -1,23 +1,23 @@
 package controle;
 
 import dados.Cliente;
-import dados.Usuario;
-import interfaces.IRepositorioUsuarios;
+import dados.Pessoa;
+import interfaces.IRepositorioPessoas;
 import repositorios.RepositorioClientesLista;
 
 public class ControleClientes {
-	IRepositorioUsuarios clientes = new RepositorioClientesLista();
+	IRepositorioPessoas clientes = new RepositorioClientesLista();
 	
-	public void cadastrar(Usuario usuario) {
-		clientes.adicionar(usuario);
+	public void cadastrar(Cliente pessoa) {
+		clientes.adicionar(pessoa);
 	}
 	
-	public void apagar(Usuario usuario) {
-		clientes.remover(usuario);
+	public void apagar(Cliente pessoa) {
+		clientes.remover(pessoa);
 	}
 	
-	public boolean existe(Usuario usuario) {
-		return clientes.existe(usuario);
+	public boolean existe(Cliente pessoa) {
+		return clientes.existe(pessoa);
 	}
 	
 	public Cliente buscar(int id) {
@@ -28,7 +28,7 @@ public class ControleClientes {
 		return (Cliente) clientes.buscar(email);
 	}
 	
-	public Cliente buscar(Usuario usuario) {
-		return (Cliente) clientes.buscar(usuario);
+	public Cliente buscar(Cliente pessoa) {
+		return (Cliente) clientes.buscar(pessoa);
 	}
 }

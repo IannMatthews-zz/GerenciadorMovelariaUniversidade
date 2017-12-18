@@ -1,13 +1,13 @@
 package dados;
 
-public abstract class Usuario {
+public abstract class Pessoa {
 	private static int geradorId;
 	private int id;
 	private String nome;
 	private Localizacao endereco;
 	Contato contato; 
 	
-	public Usuario(String nome, String email, int ddd, int numero) {
+	public Pessoa(String nome, String email, int ddd, int numero) {
 		geradorId++;
 		this.id = geradorId;
 		this.setNome(nome);
@@ -22,7 +22,7 @@ public abstract class Usuario {
 	}
 
 	public static void setGeradorId(int geradorId) {
-		Usuario.geradorId = geradorId;
+		Pessoa.geradorId = geradorId;
 	}
 
 	public int getId() {

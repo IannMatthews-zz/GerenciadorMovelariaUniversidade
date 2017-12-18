@@ -1,4 +1,4 @@
-package telas;
+package teste;
 
 import dados.Funcionario;
 import dados.Produto;
@@ -14,7 +14,7 @@ public class Programa {
 		
 		Funcionario iann = new Vendedor("Iann", "iann@email.com",81,99999999);
 		
-		Venda venda01 = new Venda(new Produto(null,"Estante",2,2,2,2,0,4,true));
+		Venda venda01 = new Venda(null, null, null, null, 0));
 		
 		
 		

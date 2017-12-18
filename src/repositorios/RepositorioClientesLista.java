@@ -4,26 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dados.Cliente;
-import dados.Usuario;
-import interfaces.IRepositorioUsuarios;
+import dados.Pessoa;
+import interfaces.IRepositorioPessoas;
 
-public class RepositorioClientesLista implements IRepositorioUsuarios {
+public class RepositorioClientesLista implements IRepositorioPessoas {
 	private List<Cliente> clientes = new ArrayList<Cliente>();
 
 	
-	public void adicionar(Usuario u) {
+	public void adicionar(Pessoa u) {
 		clientes.add((Cliente) u);
 	}
 
 	
-	public void remover(Usuario u) {
+	public void remover(Pessoa u) {
 		if (this.existe(u)) {
 			clientes.remove((Cliente) u);
 		}
 	}
 
 	
-	public boolean existe(Usuario u) {
+	public boolean existe(Pessoa u) {
 		if (clientes.contains(u)) {
 			return true;
 		}
@@ -31,7 +31,7 @@ public class RepositorioClientesLista implements IRepositorioUsuarios {
 	}
 
 	
-	public Usuario buscar(Usuario u) {
+	public Pessoa buscar(Pessoa u) {
 		for(Cliente cliente : clientes) {
 			if(cliente.getId() == u.getId()) {
 				return cliente;
@@ -41,7 +41,7 @@ public class RepositorioClientesLista implements IRepositorioUsuarios {
 	}
 
 	
-	public Usuario buscar(int id) {
+	public Pessoa buscar(int id) {
 		for(Cliente cliente : clientes) {
 			if(cliente.getId() == id) {
 				return cliente;
@@ -50,7 +50,7 @@ public class RepositorioClientesLista implements IRepositorioUsuarios {
 		return null;
 	}
 
-	public Usuario buscar(String email) {
+	public Pessoa buscar(String email) {
 		for(Cliente cliente : clientes) {
 			if(cliente.getContato().getEmail() == email) {
 				return cliente;

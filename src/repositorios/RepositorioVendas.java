@@ -2,8 +2,7 @@ package repositorios;
 
 import java.util.ArrayList;
 
-import dados.Marceneiro;
-import dados.Produto;
+import dados.Cliente;
 import dados.Venda;
 import dados.Vendedor;
 import interfaces.IRepositorioVendas;
@@ -33,36 +32,42 @@ public class RepositorioVendas implements IRepositorioVendas {
 		return false;
 	}
 
-	public Venda buscar(Marceneiro m) {
+	public ArrayList<Venda> buscar(Cliente c) {
+		ArrayList<Venda> lista = new ArrayList<Venda>();
 		for(Venda venda : vendas) {
-			if(venda.getProduto().getOrcamento().getMarceneiro().getId() == m.getId())
+			if(venda.getCliente().equals(c))
 			{
-				return venda;
+				lista.add(venda);
 			}
 		}
-		return null;
+		return lista;
 		
 	}
 
-	public Venda buscar(Vendedor v) {
+	public ArrayList<Venda> buscar(Vendedor v) {
+		ArrayList<Venda> lista = new ArrayList<Venda>();
 		for(Venda venda : vendas) {
-			if(venda.getProduto().getOrcamento().getVendedor().equals(v));
+			if(venda.getVendedor().equals(v))
 			{
-				return venda;
+				lista.add(venda);
+			}
+		}
+		return lista;
+	}
+	public Venda buscar(Venda venda)
+	{
+		for(Venda v : vendas) {
+			if(v.equals(venda))
+			{
+				return v;
 			}
 		}
 		return null;
+	}
+	public void cancelar(Venda venda) {
+		
+		buscar(venda).setVendaCancelada(true);
 	}
 
-	public Venda buscar(Produto produto) {
-		for(Venda venda : vendas) {
-			if(venda.getProduto().equals(produto))
-			{
-				return venda;
-			}
-		}
-		return null;
-	}
-	
 	
 }

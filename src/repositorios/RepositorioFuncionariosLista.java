@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dados.Funcionario;
-import dados.Usuario;
-import interfaces.IRepositorioUsuarios;
+import dados.Pessoa;
+import interfaces.IRepositorioPessoas;
 
-public class RepositorioFuncionariosLista implements IRepositorioUsuarios {
+public class RepositorioFuncionariosLista implements IRepositorioPessoas {
 
 	private List<Funcionario> funcionarios;
 
@@ -15,23 +15,23 @@ public class RepositorioFuncionariosLista implements IRepositorioUsuarios {
 		funcionarios = new ArrayList<Funcionario>();
 	}
 	
-	public void adicionar(Usuario u) {
+	public void adicionar(Pessoa u) {
 		funcionarios.add((Funcionario) u);
 		//System.out.println("Funcionario adicionado com sucesso!"); //implementado apenas para testar polimorfismo (estava testando se esse metodo adiciona um cliente)
 	}
 	
-	public void remover(Usuario u) {
+	public void remover(Pessoa u) {
 		funcionarios.remove((Funcionario)u);
 	}
 	
-	public boolean existe(Usuario u) {
+	public boolean existe(Pessoa u) {
 		if(this.funcionarios.contains(u))
 			return true;
 		return false;
 	}
 
-	public Usuario buscar(Usuario u) {
-		for(Usuario u2 : funcionarios) {
+	public Pessoa buscar(Pessoa u) {
+		for(Pessoa u2 : funcionarios) {
 			if(u2.getId()==u.getId())
 				return u2;
 			
@@ -39,8 +39,8 @@ public class RepositorioFuncionariosLista implements IRepositorioUsuarios {
 		return null;
 	}
 	
-	public Usuario buscar(int id) {
-		for(Usuario u2 : funcionarios) {
+	public Pessoa buscar(int id) {
+		for(Pessoa u2 : funcionarios) {
 			if(u2.getId()==id)
 				return u2;
 			
@@ -48,8 +48,8 @@ public class RepositorioFuncionariosLista implements IRepositorioUsuarios {
 		return null;
 	}
 
-	public Usuario buscar(String email) {
-		for(Usuario u2 : funcionarios) {
+	public Pessoa buscar(String email) {
+		for(Pessoa u2 : funcionarios) {
 			if(u2.getContato().getEmail()==email)
 				return u2;
 			
