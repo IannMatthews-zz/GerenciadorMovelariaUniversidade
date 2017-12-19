@@ -1,20 +1,20 @@
 package teste;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import dados.Cliente;
-import dados.Funcionario;
+import dados.Frete;
+import dados.Localizacao;
 import dados.Produto;
-import dados.Usuario;
 import dados.Venda;
 import dados.Vendedor;
 import fachada.Fachada;
-import repositorios.RepositorioFuncionariosLista;
+import arquivos.ArquivoClientes;
 
 public class Programa {
 
 	public static void main(String[] args) {
-		Fachada fachada = Fachada.getInstance();
 		System.out.println("Gerenciador movelaria");
 		
 		Vendedor iann = new Vendedor("Iann", "iann@email.com",81,99999999);
@@ -24,17 +24,28 @@ public class Programa {
 		ArrayList<Produto> produtosC1 = new ArrayList<Produto>();
 		ArrayList<Produto> produtosC2 = new ArrayList<Produto>();
 		
-		Venda v1 = new Venda(produtosC2, c2, bruno, null, 5);
+		produtosC2.add(new Produto());
+		
+		Venda v1 = new Venda(produtosC2, c2, bruno, new Frete(new Localizacao()), 5);
 		Venda v2 = new Venda(produtosC1,c1,iann,null,5);
 		
-		fachada.cadastrar(c1);
-		fachada.cadastrar(c2);
+		Fachada.getInstance().cadastrar(c1);
+		Fachada.getInstance().cadastrar(c2);
 		
-		fachada.cadastrar(bruno);
-		fachada.cadastrar(iann);
+		Fachada.getInstance().cadastrar(bruno);
+		Fachada.getInstance().cadastrar(iann);
 		
-		fachada.adicionar(v1);
-		fachada.adicionar(v2);
+		try {
+			ArquivoClientes.getInstance().fazerBackup(c1);
+			ArquivoClientes.getInstance().fazerBackup(c2);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+//			e.printStackTrace();
+			System.out.println("Deu merda");
+		}
+		
+		Fachada.getInstance().adicionar(v1);
+		Fachada.getInstance().adicionar(v2);
 		
 	}
 

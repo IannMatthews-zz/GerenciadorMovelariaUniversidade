@@ -17,6 +17,7 @@ public class Fachada {
 	public Fachada() {
 		clientes = new ControleClientes();
 		vendedores = new ControleVendedores();
+		vendas = new ControleVendas();
 	}
 	
 	private static Fachada instance;
