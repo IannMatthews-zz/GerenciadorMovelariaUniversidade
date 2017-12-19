@@ -1,0 +1,9 @@
+3
+cliente1
+cliente1@email.com
+81
+99999999
+0
+null
+0.0
+0.0
