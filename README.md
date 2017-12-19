@@ -1,7 +1,5 @@
 # GerenciadorMovelariaUniversidade
 
-descriacao textual
-
 o projeto consiste em uma aplicação para facilitar a comunicação e registro de vendas e producao entre, uma marcenaria e seus vendedores, inicialmente um unico produto será vendido "Mesa de canto redonda"(podendo variar seu tamanho, diametro e cor)
 
 dois tipos de usuarios terão acesso a aplicação:
