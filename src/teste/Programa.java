@@ -41,11 +41,25 @@ public class Programa {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
-			System.out.println("Deu merda");
+			System.out.println("Deu errado");
 		}
 		
 		Fachada.getInstance().adicionar(v1);
 		Fachada.getInstance().adicionar(v2);
+		
+		try {
+			Cliente cliente = ArquivoClientes.getInstance().lerArquivo(3);
+			System.out.println(cliente.getId() + "\n" + cliente.getNome());
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+//			System.out.println("Deu errado em conversão de numero");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+//			e.printStackTrace();
+			System.out.println("deu errado IO");
+		}
+		System.out.println();
 		
 	}
 

@@ -5,16 +5,27 @@ public abstract class Pessoa {
 	private int id;
 	private String nome;
 	private Localizacao endereco;
-	Contato contato; 
-	
+	Contato contato;
+
 	public Pessoa(String nome, String email, int ddd, int numero) {
 		geradorId++;
 		this.id = geradorId;
 		this.setNome(nome);
-		//.alterado para adicao do objeto contato
-		contato = new Contato(email,ddd, numero );
-		
+		// .alterado para adicao do objeto contato
+		contato = new Contato(email, ddd, numero);
+
 		endereco = new Localizacao();
+	}
+
+	public Pessoa(int id, String nome, String email, int ddd, int numero) {
+//		if (id >= geradorId) {
+			this.setId(id);
+			this.setNome(nome);
+			// .alterado para adicao do objeto contato
+			contato = new Contato(email, ddd, numero);
+
+			endereco = new Localizacao();
+//		}
 	}
 
 	public static int getGeradorId() {
@@ -56,7 +67,5 @@ public abstract class Pessoa {
 	public void setContato(Contato contato) {
 		this.contato = contato;
 	}
-	
-
 
 }

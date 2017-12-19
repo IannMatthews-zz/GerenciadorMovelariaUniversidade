@@ -1,7 +1,10 @@
 package arquivos;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -52,6 +55,28 @@ public class ArquivoClientes {
 		
 		bw.flush();
 		
+	}
+	
+	public Cliente lerArquivo(int id) throws NumberFormatException, IOException {
+		Cliente cliente;
+		
+		File arq = new File(pasta + "/Cliente" + id + ".clnt");
+		FileReader fr = new FileReader(arq);
+		BufferedReader br = new BufferedReader(fr);
+		
+		int idCliente = Integer.parseInt(br.readLine());
+		String nomeCliente = br.readLine();
+		String emailCliente = br.readLine();
+		int DDDCliente = Integer.parseInt(br.readLine());
+		int numeroCliente = Integer.parseInt(br.readLine());
+		int CEPCliente = Integer.parseInt(br.readLine());
+		String enderecoCliente = br.readLine();
+		double latitudeCliente = Double.parseDouble(br.readLine());
+		double longitudeCliente = Double.parseDouble(br.readLine());
+		
+		cliente = new Cliente(idCliente,nomeCliente, emailCliente, DDDCliente, numeroCliente);
+		
+		return cliente;
 	}
 	
 	
