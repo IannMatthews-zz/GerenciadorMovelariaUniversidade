@@ -27,7 +27,7 @@ public class ArquivoClientes {
 	}
 	
 	public void criarArquivo(String nome) throws IOException {
-		this.setNome(nome + ".txt");
+		this.setNome(nome + ".clnt");
 		File arq = new File(pasta + "/" + this.getNome());
 		arq.createNewFile();
 	}
