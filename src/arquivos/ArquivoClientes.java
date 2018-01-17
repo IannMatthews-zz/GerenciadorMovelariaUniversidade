@@ -81,7 +81,7 @@ public class ArquivoClientes {
 		cliente = new Cliente(idCliente,nomeCliente, emailCliente, DDDCliente, 
 				numeroCliente, endereco);
 		
-		//br.close();
+		br.close();
 		return cliente;
 	}
 	
