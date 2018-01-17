@@ -1,13 +1,10 @@
-package fachada;
+package Controller;
 
 import java.util.ArrayList;
 
-import controle.ControleClientes;
-import controle.ControleVendas;
-import controle.ControleVendedores;
-import dados.Cliente;
-import dados.Venda;
-import dados.Vendedor;
+import Model.Cliente;
+import Model.Venda;
+import Model.Vendedor;
 
 public class Fachada {
 	private ControleClientes clientes;

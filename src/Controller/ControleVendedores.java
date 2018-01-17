@@ -1,10 +1,10 @@
-package controle;
+package Controller;
 
 
-import dados.Venda;
-import dados.Vendedor;
-import interfaces.IRepositorioPessoas;
-import repositorios.RepositorioFuncionariosLista;
+import Model.IRepositorioPessoas;
+import Model.RepositorioFuncionariosLista;
+import Model.Venda;
+import Model.Vendedor;
 
 public class ControleVendedores {
 	

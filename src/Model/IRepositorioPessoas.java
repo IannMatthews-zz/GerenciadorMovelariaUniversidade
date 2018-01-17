@@ -1,6 +1,4 @@
-package interfaces;
-
-import dados.Pessoa;
+package Model;
 
 public interface IRepositorioPessoas {
 	void adicionar(Pessoa u);

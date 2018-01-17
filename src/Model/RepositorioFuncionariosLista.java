@@ -1,11 +1,7 @@
-package repositorios;
+package Model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import dados.Funcionario;
-import dados.Pessoa;
-import interfaces.IRepositorioPessoas;
 
 public class RepositorioFuncionariosLista implements IRepositorioPessoas {
 

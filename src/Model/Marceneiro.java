@@ -1,4 +1,4 @@
-package dados;
+package Model;
 
 public class Marceneiro extends Funcionario {
 

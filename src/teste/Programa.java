@@ -3,13 +3,13 @@ package teste;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import dados.Cliente;
-import dados.Frete;
-import dados.Localizacao;
-import dados.Produto;
-import dados.Venda;
-import dados.Vendedor;
-import fachada.Fachada;
+import Controller.Fachada;
+import Model.Cliente;
+import Model.Frete;
+import Model.Localizacao;
+import Model.Produto;
+import Model.Venda;
+import Model.Vendedor;
 import arquivos.ArquivoClientes;
 
 public class Programa {

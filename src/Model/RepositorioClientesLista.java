@@ -1,11 +1,7 @@
-package repositorios;
+package Model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import dados.Cliente;
-import dados.Pessoa;
-import interfaces.IRepositorioPessoas;
 
 public class RepositorioClientesLista implements IRepositorioPessoas {
 	private List<Cliente> clientes = new ArrayList<Cliente>();

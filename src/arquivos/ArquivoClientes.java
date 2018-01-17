@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import dados.Cliente;
+import Model.Cliente;
 
 public class ArquivoClientes {
 	private String nome;

@@ -1,9 +1,9 @@
-package controle;
+package Controller;
 
-import dados.Cliente;
-import dados.Pessoa;
-import interfaces.IRepositorioPessoas;
-import repositorios.RepositorioClientesLista;
+import Model.Cliente;
+import Model.IRepositorioPessoas;
+import Model.Pessoa;
+import Model.RepositorioClientesLista;
 
 public class ControleClientes {
 	IRepositorioPessoas clientes = new RepositorioClientesLista();

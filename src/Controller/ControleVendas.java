@@ -1,12 +1,12 @@
-package controle;
+package Controller;
 
 import java.util.ArrayList;
 
-import dados.Cliente;
-import dados.Venda;
-import dados.Vendedor;
-import interfaces.IRepositorioVendas;
-import repositorios.RepositorioVendas;
+import Model.Cliente;
+import Model.IRepositorioVendas;
+import Model.RepositorioVendas;
+import Model.Venda;
+import Model.Vendedor;
 
 public class ControleVendas {
 

@@ -1,4 +1,4 @@
-package dados;
+package Model;
 
 public class MesaDeCantoRedonda extends Produto{
 
