@@ -8,7 +8,7 @@ public class Produto {
 
 	
 	public Produto() {
-		this.id = this.contadorId++;
+		this.id = Produto.contadorId++;
 	}
 	
 	public int getId() {

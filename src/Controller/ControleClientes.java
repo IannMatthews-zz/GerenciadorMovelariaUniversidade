@@ -2,7 +2,6 @@ package Controller;
 
 import Model.Cliente;
 import Model.IRepositorioPessoas;
-import Model.Pessoa;
 import Model.RepositorioClientesLista;
 
 public class ControleClientes {

@@ -3,7 +3,6 @@ package Controller;
 
 import Model.IRepositorioPessoas;
 import Model.RepositorioFuncionariosLista;
-import Model.Venda;
 import Model.Vendedor;
 
 public class ControleVendedores {
