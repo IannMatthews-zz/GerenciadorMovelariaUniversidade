@@ -7,24 +7,24 @@ public abstract class Pessoa {
 	private Localizacao endereco;
 	Contato contato;
 
-	public Pessoa(String nome, String email, int ddd, int numero) {
+	public Pessoa(String nome, String email, int ddd, int numero, Localizacao endereco) {
 		geradorId++;
 		this.id = geradorId;
 		this.setNome(nome);
 		// .alterado para adicao do objeto contato
 		contato = new Contato(email, ddd, numero);
 
-		endereco = new Localizacao();
+		this.endereco = endereco;
 	}
 
-	public Pessoa(int id, String nome, String email, int ddd, int numero) {
+	public Pessoa(int id, String nome, String email, int ddd, int numero, Localizacao endereco) {
 //		if (id >= geradorId) {
 			this.setId(id);
 			this.setNome(nome);
 			// .alterado para adicao do objeto contato
 			contato = new Contato(email, ddd, numero);
 
-			endereco = new Localizacao();
+			this.endereco = endereco;
 //		}
 	}
 

@@ -22,8 +22,8 @@ public class Contato
 	public int getDDD() {
 		return DDD;
 	}
-	public void setDDD(int dDD) {
-		DDD = dDD;
+	public void setDDD(int DDD) {
+		DDD = DDD;
 	}
 	public int getNumero() {
 		return numero;

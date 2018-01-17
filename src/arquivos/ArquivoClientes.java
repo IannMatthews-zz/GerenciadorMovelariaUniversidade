@@ -3,12 +3,13 @@ package arquivos;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
 import Model.Cliente;
+import Model.Contato;
+import Model.Localizacao;
 
 public class ArquivoClientes {
 	private String nome;
@@ -66,16 +67,21 @@ public class ArquivoClientes {
 		
 		int idCliente = Integer.parseInt(br.readLine());
 		String nomeCliente = br.readLine();
+		
 		String emailCliente = br.readLine();
 		int DDDCliente = Integer.parseInt(br.readLine());
 		int numeroCliente = Integer.parseInt(br.readLine());
-		int CEPCliente = Integer.parseInt(br.readLine());
-		String enderecoCliente = br.readLine();
-		double latitudeCliente = Double.parseDouble(br.readLine());
-		double longitudeCliente = Double.parseDouble(br.readLine());
 		
-		cliente = new Cliente(idCliente,nomeCliente, emailCliente, DDDCliente, numeroCliente);
+		Localizacao endereco = new Localizacao();
+		endereco.setCEP(Integer.parseInt(br.readLine()));
+		endereco.setEndereco(br.readLine());
+		endereco.setLatitude(Double.parseDouble(br.readLine()));
+		endereco.setLongitude(Double.parseDouble(br.readLine()));
 		
+		cliente = new Cliente(idCliente,nomeCliente, emailCliente, DDDCliente, 
+				numeroCliente, endereco);
+		
+		//br.close();
 		return cliente;
 	}
 	

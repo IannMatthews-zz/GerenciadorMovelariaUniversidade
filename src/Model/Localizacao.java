@@ -16,8 +16,8 @@ public class Localizacao {
 	public int getCEP() {
 		return CEP;
 	}
-	public void setCEP(int cEP) {
-		CEP = cEP;
+	public void setCEP(int CEP) {
+		this.CEP = CEP;
 	}
 	public double getLatitude() {
 		return latitude;
