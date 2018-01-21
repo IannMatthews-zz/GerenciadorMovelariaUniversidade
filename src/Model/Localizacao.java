@@ -7,6 +7,11 @@ public class Localizacao {
 	private double latitude;
 	private double longitude;
 	
+	public Localizacao(String endereco, int CEP) {
+		this.setEndereco(endereco);
+		this.setCEP(CEP);
+	}
+	
 	public String getEndereco() {
 		return endereco;
 	}

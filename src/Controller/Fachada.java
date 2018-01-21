@@ -3,6 +3,7 @@ package Controller;
 import java.util.ArrayList;
 
 import Model.Cliente;
+import Model.PessoaNaoEncontradaException;
 import Model.Venda;
 import Model.Vendedor;
 
@@ -39,15 +40,15 @@ public class Fachada {
 		return clientes.existe(cliente);
 	}
 	
-	public Cliente buscarCliente(int id) {
+	public Cliente buscarCliente(int id) throws PessoaNaoEncontradaException {
 		return (Cliente) clientes.buscar(id);
 	}
 
-	public Cliente buscarCliente(String email) {
+	public Cliente buscarCliente(String email) throws PessoaNaoEncontradaException {
 		return (Cliente) clientes.buscar(email);
 	}
 	
-	public Cliente buscarCliente(Cliente cliente) {
+	public Cliente buscarCliente(Cliente cliente) throws PessoaNaoEncontradaException {
 		return (Cliente) clientes.buscar(cliente);
 	}
 	

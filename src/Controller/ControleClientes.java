@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Cliente;
 import Model.IRepositorioPessoas;
+import Model.PessoaNaoEncontradaException;
 import Model.RepositorioClientesLista;
 
 public class ControleClientes {
@@ -19,15 +20,15 @@ public class ControleClientes {
 		return clientes.existe(pessoa);
 	}
 	
-	public Cliente buscar(int id) {
+	public Cliente buscar(int id) throws PessoaNaoEncontradaException {
 		return (Cliente) clientes.buscar(id);
 	}
 	
-	public Cliente buscar(String email) {
+	public Cliente buscar(String email) throws PessoaNaoEncontradaException {
 		return (Cliente) clientes.buscar(email);
 	}
 	
-	public Cliente buscar(Cliente pessoa) {
+	public Cliente buscar(Cliente pessoa) throws PessoaNaoEncontradaException {
 		return (Cliente) clientes.buscar(pessoa);
 	}
 }

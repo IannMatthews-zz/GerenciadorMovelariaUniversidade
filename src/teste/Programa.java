@@ -17,16 +17,16 @@ public class Programa {
 	public static void main(String[] args) {
 		System.out.println("Gerenciador movelaria");
 		
-		Vendedor iann = new Vendedor("Iann", "iann@email.com",81,99999999, new Localizacao());
-		Vendedor bruno = new Vendedor("bruno", "bruno@email.com",81,99999999, new Localizacao());
-		Cliente c1 = new Cliente("Iann", "cliente1@email.com",81,99999999, new Localizacao());
-		Cliente c2 = new Cliente("cliente2", "cliente2@email.com",81,99999999, new Localizacao());
+		Vendedor iann = new Vendedor("Iann", "iann@email.com",81,99999999, new Localizacao("rua", 1));
+		Vendedor bruno = new Vendedor("bruno", "bruno@email.com",81,99999999, new Localizacao("rua", 2));
+		Cliente c1 = new Cliente("Iann", "cliente1@email.com",81,99999999, new Localizacao("rua", 3));
+		Cliente c2 = new Cliente("cliente2", "cliente2@email.com",81,99999999, new Localizacao("rua", 0));
 		ArrayList<Produto> produtosC1 = new ArrayList<Produto>();
 		ArrayList<Produto> produtosC2 = new ArrayList<Produto>();
 		
 		produtosC2.add(new Produto());
 		
-		Venda v1 = new Venda(produtosC2, c2, bruno, new Frete(new Localizacao()), 5);
+		Venda v1 = new Venda(produtosC2, c2, bruno, new Frete(new Localizacao("rua", 5)), 5);
 		Venda v2 = new Venda(produtosC1,c1,iann,null,5);
 		
 		Fachada.getInstance().cadastrar(c1);
@@ -60,6 +60,15 @@ public class Programa {
 			System.out.println("deu errado IO");
 		}
 		System.out.println();
+		
+//		Cliente c1 = new Cliente("Iann", "email@mail.com", 81, 99999999, new Localizacao("rua", 55000111));
+//		
+//		Cliente c2 = c1;
+//		
+//		c1.setNome("Ivan");
+//		
+//		System.out.println(c2.getNome());
+		
 		
 	}
 

@@ -53,4 +53,9 @@ public class RepositorioFuncionariosLista implements IRepositorioPessoas {
 		return null;
 	}
 
+	public void editar(Pessoa u) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
