@@ -759,7 +759,6 @@ public class TelaPrincipal extends JFrame {
 	}
 
 	private void apagarTelas() {
-		// TODO Auto-generated method stub
 		panelGerenciarClientes.setVisible(false);
 		panelVendedor.setVisible(false);
 		panelMarceneiro.setVisible(false);
