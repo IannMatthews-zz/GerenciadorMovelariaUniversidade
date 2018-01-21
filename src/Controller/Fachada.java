@@ -52,6 +52,10 @@ public class Fachada {
 		return (Cliente) clientes.buscar(cliente);
 	}
 	
+	public void editarCliente(Cliente cliente) throws PessoaNaoEncontradaException {
+		clientes.editar(cliente);
+	}
+	
 	
 	//controleVendedores
 	public void cadastrar(Vendedor vendedor) {
