@@ -690,6 +690,10 @@ public class TelaPrincipal extends JFrame {
 		lblVendedor.setHorizontalAlignment(SwingConstants.CENTER);
 		lblVendedor.setBounds(0, 0, 684, 45);
 		panelVendedor.add(lblVendedor);
+		
+		// LIMPAR TELA NA INICIALIZACAO
+		apagarTelas();
+		panelLogin.setVisible(true);
 		// FIM INICIALIZACAO
 
 		JButton btnGerenciarClientes = new JButton("Gerenciar Clientes");
@@ -710,8 +714,6 @@ public class TelaPrincipal extends JFrame {
 		btnFazerPedido.setBounds(250, 278, 200, 100);
 		panelVendedor.add(btnFazerPedido);
 
-		// LIMPAR TELA NA INICIALIZACAO
-		apagarTelas();
 
 		panelMarceneiro.setBounds(0, 0, 684, 389);
 		contentPane.add(panelMarceneiro);
