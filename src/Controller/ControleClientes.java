@@ -31,8 +31,4 @@ public class ControleClientes {
 	public Cliente buscar(Cliente pessoa) throws PessoaNaoEncontradaException {
 		return (Cliente) clientes.buscar(pessoa);
 	}
-	
-	public void editar(Cliente pessoa) throws PessoaNaoEncontradaException {
-		clientes.editar(pessoa);
-	}
 }

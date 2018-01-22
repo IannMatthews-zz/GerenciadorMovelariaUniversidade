@@ -5,18 +5,16 @@ public class MesaDeCantoRedonda extends Produto{
 	private final String NOME = "Mesa de canto Redonda";
 	private double altura;
 	private double diametro;
+	Cor pes;
+	Cor tampo;
 	
-	//criar enum cores
-	/**Cores pes;
-	Cores tampo;
-	**/
-	public MesaDeCantoRedonda(double altura, double diameatro /*Cores pes, Cores tampo*/) {
+	public MesaDeCantoRedonda(double altura, double diameatro, Cor pes, Cor tampo) {
 		super();
 		this.altura = altura;
 		this.diametro = diameatro;
-		/*this.tampo = tampo;
-		 * this.pes=pes;
-		 */
+		this.tampo = tampo;
+		this.pes=pes;
+		 
 		
 	}
 	
