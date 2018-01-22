@@ -66,16 +66,16 @@ public class Fachada {
 		return vendedores.existe(vendedor);
 	}
 	
-	public Vendedor buscarVendedor(int id)
+	public Vendedor buscarVendedor(int id) throws PessoaNaoEncontradaException
 	{
 		return vendedores.buscar(id);
 	}
 	
-	public Vendedor buscarVendedor(String email) {
+	public Vendedor buscarVendedor(String email) throws PessoaNaoEncontradaException {
 		return (Vendedor) vendedores.buscar(email);
 	}
 	
-	public Vendedor buscarVendedor(Vendedor vendedor) {
+	public Vendedor buscarVendedor(Vendedor vendedor) throws PessoaNaoEncontradaException {
 		return (Vendedor) vendedores.buscar(vendedor);
 	}
 

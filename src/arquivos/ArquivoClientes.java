@@ -49,8 +49,8 @@ public class ArquivoClientes {
 		bw.write(cliente.getContato().getEmail() + "\n");
 		bw.write(cliente.getContato().getDDD() + "\n");
 		bw.write(cliente.getContato().getNumero() + "\n");
-		bw.write(cliente.getEndereco().getCEP() + "\n");
 		bw.write(cliente.getEndereco().getEndereco() + "\n");
+		bw.write(cliente.getEndereco().getCEP() + "\n");
 		bw.write(cliente.getEndereco().getLatitude() + "\n");
 		bw.write(cliente.getEndereco().getLongitude() + "\n");
 		
@@ -72,9 +72,9 @@ public class ArquivoClientes {
 		int DDDCliente = Integer.parseInt(br.readLine());
 		int numeroCliente = Integer.parseInt(br.readLine());
 		
-		Localizacao endereco = new Localizacao();
-		endereco.setCEP(Integer.parseInt(br.readLine()));
-		endereco.setEndereco(br.readLine());
+		
+		
+		Localizacao endereco = new Localizacao(br.readLine(), Integer.parseInt(br.readLine()));
 		endereco.setLatitude(Double.parseDouble(br.readLine()));
 		endereco.setLongitude(Double.parseDouble(br.readLine()));
 		
