@@ -72,9 +72,7 @@ public class ArquivoClientes {
 		int DDDCliente = Integer.parseInt(br.readLine());
 		int numeroCliente = Integer.parseInt(br.readLine());
 		
-		Localizacao endereco = new Localizacao();
-		endereco.setCEP(Integer.parseInt(br.readLine()));
-		endereco.setEndereco(br.readLine());
+		Localizacao endereco = new Localizacao(br.readLine(), Integer.parseInt(br.readLine()));
 		endereco.setLatitude(Double.parseDouble(br.readLine()));
 		endereco.setLongitude(Double.parseDouble(br.readLine()));
 		

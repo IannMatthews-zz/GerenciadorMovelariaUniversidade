@@ -42,7 +42,7 @@ public class TelaPrincipal extends JFrame {
 	private boolean vendedorLogado = false;
 	private String login = "admin";
 	private String password = "";
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -52,11 +52,17 @@ public class TelaPrincipal extends JFrame {
 				try {
 					TelaPrincipal frame = new TelaPrincipal();
 					frame.setVisible(true);
+					iniciaTelas(frame);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+	}
+	
+	public static void iniciaTelas(TelaPrincipal janela) {
+		janela.apagarTelas();
+		janela.panelLogin.setVisible(true);
 	}
 
 	final JPanel panelGerenciarClientes = new JPanel();
@@ -113,6 +119,34 @@ public class TelaPrincipal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+				panelVendedor.setLayout(null);
+				panelVendedor.setBounds(0, 0, 684, 389);
+				contentPane.add(panelVendedor);
+				
+						JLabel lblVendedor = new JLabel("Vendedor");
+						lblVendedor.setFont(new Font("Tahoma", Font.PLAIN, 20));
+						lblVendedor.setHorizontalAlignment(SwingConstants.CENTER);
+						lblVendedor.setBounds(0, 0, 684, 45);
+						panelVendedor.add(lblVendedor);
+						
+								JButton btnGerenciarClientes = new JButton("Gerenciar Clientes");
+								btnGerenciarClientes.addActionListener(new ActionListener() {
+									public void actionPerformed(ActionEvent arg0) {
+										apagarTelas();
+										panelGerenciarClientes.setVisible(true);
+									}
+								});
+								btnGerenciarClientes.setBounds(250, 56, 200, 100);
+								panelVendedor.add(btnGerenciarClientes);
+								
+										JButton btnGerenciarVendas = new JButton("Gerenciar Vendas");
+										btnGerenciarVendas.setBounds(250, 167, 200, 100);
+										panelVendedor.add(btnGerenciarVendas);
+										
+												JButton btnFazerPedido = new JButton("Fazer Pedido");
+												btnFazerPedido.setBounds(250, 278, 200, 100);
+												panelVendedor.add(btnFazerPedido);
 
 		panelGerenciarClientes.setBounds(0, 0, 684, 389);
 		contentPane.add(panelGerenciarClientes);
@@ -596,39 +630,6 @@ public class TelaPrincipal extends JFrame {
 		lblExcluirClienteAviso.setForeground(Color.RED);
 		lblExcluirClienteAviso.setBounds(10, 142, 203, 30);
 		panelExcluirCliente.add(lblExcluirClienteAviso);
-
-		panelVendedor.setLayout(null);
-		panelVendedor.setBounds(0, 0, 684, 389);
-		contentPane.add(panelVendedor);
-
-		JLabel lblVendedor = new JLabel("Vendedor");
-		lblVendedor.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblVendedor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblVendedor.setBounds(0, 0, 684, 45);
-		panelVendedor.add(lblVendedor);
-
-		// LIMPAR TELA NA INICIALIZACAO
-		apagarTelas();
-		panelLogin.setVisible(true);
-		// FIM INICIALIZACAO
-
-		JButton btnGerenciarClientes = new JButton("Gerenciar Clientes");
-		btnGerenciarClientes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				apagarTelas();
-				panelGerenciarClientes.setVisible(true);
-			}
-		});
-		btnGerenciarClientes.setBounds(250, 56, 200, 100);
-		panelVendedor.add(btnGerenciarClientes);
-
-		JButton btnGerenciarVendas = new JButton("Gerenciar Vendas");
-		btnGerenciarVendas.setBounds(250, 167, 200, 100);
-		panelVendedor.add(btnGerenciarVendas);
-
-		JButton btnFazerPedido = new JButton("Fazer Pedido");
-		btnFazerPedido.setBounds(250, 278, 200, 100);
-		panelVendedor.add(btnFazerPedido);
 
 		panelMarceneiro.setBounds(0, 0, 684, 389);
 		contentPane.add(panelMarceneiro);
