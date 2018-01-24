@@ -22,6 +22,8 @@ import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 public class Cadastrar extends JFrame {
 
@@ -180,7 +182,7 @@ public class Cadastrar extends JFrame {
 		btnCadastrar.setBounds(296, 170, 108, 58);
 		panel.add(btnCadastrar);
 
-		JLabel lblSenha = new JLabel("Senha:");
+		final JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setBounds(21, 157, 46, 14);
 		panel.add(lblSenha);
 
@@ -189,7 +191,7 @@ public class Cadastrar extends JFrame {
 		senha.setBounds(127, 154, 159, 20);
 		panel.add(senha);
 
-		JLabel lblRepetirSenha = new JLabel("Repetir senha:");
+		final JLabel lblRepetirSenha = new JLabel("Repetir senha:");
 		lblRepetirSenha.setBounds(21, 183, 96, 14);
 		panel.add(lblRepetirSenha);
 
@@ -205,6 +207,22 @@ public class Cadastrar extends JFrame {
 		rdbtnVendedor.setBounds(304, 36, 109, 23);
 		panel.add(rdbtnVendedor);
 		buttonGroup.add(rdbtnCliente);
+		rdbtnCliente.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				if(rdbtnCliente.isSelected()) {
+					lblSenha.setVisible(false);
+					lblRepetirSenha.setVisible(false);
+					senha.setVisible(false);
+					repetirSenha.setVisible(false);
+				}
+				else {
+					lblSenha.setVisible(true);
+					lblRepetirSenha.setVisible(true);
+					senha.setVisible(true);
+					repetirSenha.setVisible(true);
+				}
+			}
+		});
 		rdbtnCliente.setSelected(true);
 
 		rdbtnCliente.setBounds(304, 67, 109, 23);
