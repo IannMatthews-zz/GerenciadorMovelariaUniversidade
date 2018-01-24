@@ -21,6 +21,11 @@ public class ControleVendas {
 	{
 		this.vendas.remover(venda);
 	}
+	
+	public ArrayList<Venda>buscar()
+	{
+		return this.vendas.buscar();
+	}
 	public ArrayList<Venda> buscar(Vendedor vendedor)
 	{
 		return this.vendas.buscar(vendedor);

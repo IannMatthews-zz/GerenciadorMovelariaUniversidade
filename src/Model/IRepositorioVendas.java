@@ -11,4 +11,5 @@ public interface IRepositorioVendas {
 	Venda buscar(Venda venda);
 	ArrayList<Venda> buscar(Cliente cliente);
 	ArrayList<Venda> buscar(Vendedor v);
+	ArrayList<Venda> buscar();
 }

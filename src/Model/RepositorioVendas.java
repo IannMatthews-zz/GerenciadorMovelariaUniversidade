@@ -59,4 +59,9 @@ public class RepositorioVendas implements IRepositorioVendas {
 		buscar(venda).setVendaCancelada(true);
 	}
 
+	public ArrayList<Venda> buscar() {
+		return vendas;
+		
+	}
+
 }
