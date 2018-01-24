@@ -12,6 +12,7 @@ import Model.Cliente;
 import Model.Fabrica;
 import Model.Localizacao;
 import Model.Marceneiro;
+import Model.PessoaNaoEncontradaException;
 import Model.Vendedor;
 
 import javax.swing.JLabel;
@@ -36,6 +37,7 @@ public class Cadastrar extends JFrame {
 	private JTextField txtCep;
 	private JPasswordField senha;
 	private JPasswordField repetirSenha;
+	Fabrica fabrica;
 
 	JRadioButton rdbtnCliente = new JRadioButton("Cliente");
 	JRadioButton rdbtnVendedor = new JRadioButton("Vendedor");
@@ -128,37 +130,40 @@ public class Cadastrar extends JFrame {
 		panel.add(txtCep);
 		txtCep.setColumns(10);
 
+		final JLabel lblConfirmaCadastro = new JLabel("");
 		// botao Cadastrar
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				if (rdbtnCliente.isSelected()) {
-					// Cliente cliente = fabrica.getCliente(tfNome.getText(), txtEmail.getText(),
-					// Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()),
-					// fabrica.getLocalizacao(txtEndereco.getText(),
-					// Integer.parseInt(txtCep.getText())));
-
 					Cliente cliente = new Cliente(tfNome.getText(), txtEmail.getText(),
 							Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()),
 							new Localizacao(txtEndereco.getText(), Integer.parseInt(txtCep.getText())));
 					Fachada.getInstance().cadastrar(cliente);
 
-					Fachada.getInstance().cadastrar(cliente);
 				}
-				if (senha.getPassword().equals(repetirSenha.getPassword())) {
+				
+//				if (senha.getPassword().equals(repetirSenha.getPassword())) {
+				if (senha.getText().equals(repetirSenha.getText())) {
+					System.out.println("entrou senha");
 					if (rdbtnVendedor.isSelected()) {
-						// Vendedor vendedor = fabrica.getVendedor(tfNome.getText(), txtEmail.getText(),
-						// new String(senha.getPassword()), Integer.parseInt(txtDDD.getText()),
-						// Integer.parseInt(txtNumero.getText()),
-						// fabrica.getLocalizacao(txtEndereco.getText(),
-						// Integer.parseInt(txtCep.getText())));
 						Vendedor vendedor = new Vendedor(tfNome.getText(), txtEmail.getText(),
 								new String(senha.getPassword()), Integer.parseInt(txtDDD.getText()),
 								Integer.parseInt(txtNumero.getText()),
 								new Localizacao(txtEndereco.getText(), Integer.parseInt(txtCep.getText())));
 
 						Fachada.getInstance().cadastrar(vendedor);
+
+						try {
+
+							if (Fachada.getInstance().buscarVendedor(vendedor.getId()).getId() == vendedor.getId()) {
+								lblConfirmaCadastro.setText("Cadastrado com sucesso");
+							}
+						} catch (PessoaNaoEncontradaException e1) {
+							lblConfirmaCadastro.setText("Deu merda");
+						}
+
 					} else if (rdbtnMarceneiro.isSelected()) {
 						Marceneiro marceneiro = new Marceneiro(tfNome.getText(), txtEmail.getText(),
 								new String(senha.getPassword()), Integer.parseInt(txtDDD.getText()),
@@ -166,7 +171,7 @@ public class Cadastrar extends JFrame {
 								new Localizacao(txtEndereco.getText(), Integer.parseInt(txtCep.getText())));
 
 						// Fachada.getInstance().cadastrar(marceneiro);
-					}
+					} 
 					/*
 					 * if(rdbtnMarceneiro.isSelected()) { Marceneiro marceneiro =
 					 * fabrica.getMarceneiro(tfNome.getText(), txtEmail.getText(),new String
@@ -209,13 +214,12 @@ public class Cadastrar extends JFrame {
 		buttonGroup.add(rdbtnCliente);
 		rdbtnCliente.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
-				if(rdbtnCliente.isSelected()) {
+				if (rdbtnCliente.isSelected()) {
 					lblSenha.setVisible(false);
 					lblRepetirSenha.setVisible(false);
 					senha.setVisible(false);
 					repetirSenha.setVisible(false);
-				}
-				else {
+				} else {
 					lblSenha.setVisible(true);
 					lblRepetirSenha.setVisible(true);
 					senha.setVisible(true);
@@ -227,6 +231,9 @@ public class Cadastrar extends JFrame {
 
 		rdbtnCliente.setBounds(304, 67, 109, 23);
 		panel.add(rdbtnCliente);
+
+		lblConfirmaCadastro.setBounds(10, 225, 230, 14);
+		panel.add(lblConfirmaCadastro);
 	}
 
 	public static Cadastrar getInstance() {

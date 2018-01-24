@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Controller.Fachada;
+import Model.Funcionario;
 import Model.PessoaNaoEncontradaException;
 
 import javax.swing.JLabel;
@@ -53,6 +54,78 @@ public class Login extends JFrame {
 		contentPane.setLayout(null);
 		
 		panelPrincipal.setVisible(false);
+		
+		final JPanel panelEntrar = new JPanel();
+		panelEntrar.setBounds(10, 11, 414, 239);
+		contentPane.add(panelEntrar);
+		panelEntrar.setLayout(null);
+		
+		JPanel panelLogin = new JPanel();
+		panelLogin.setBounds(186, 11, 218, 114);
+		panelEntrar.add(panelLogin);
+		panelLogin.setLayout(null);
+		
+		JLabel lblLogin = new JLabel("Login:");
+		lblLogin.setBounds(33, 11, 46, 14);
+		panelLogin.add(lblLogin);
+		
+		JLabel lblSenha = new JLabel("Senha:");
+		lblSenha.setBounds(30, 46, 46, 14);
+		panelLogin.add(lblSenha);
+		
+		tfNomeLogin = new JTextField();
+		tfNomeLogin.setBounds(84, 11, 116, 20);
+		panelLogin.add(tfNomeLogin);
+		tfNomeLogin.setColumns(10);
+		
+		pwdSenha = new JPasswordField();
+		pwdSenha.setBounds(84, 40, 116, 20);
+		panelLogin.add(pwdSenha);
+		
+		
+		JButton btnLogin = new JButton("Entrar");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+					
+					try {
+						Funcionario f1 = Fachada.getInstance().buscarVendedor(tfNomeLogin.getText());
+						System.out.println("nome " + f1.getNome());
+						if(f1.ValidaSenha(pwdSenha.getText())){
+							System.out.println("Senha OK");
+							panelEntrar.setVisible(false);
+							panelPrincipal.setVisible(true);
+						}
+					} catch (PessoaNaoEncontradaException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}		
+				
+			}
+		});
+		btnLogin.setBounds(107, 67, 89, 23);
+		panelLogin.add(btnLogin);
+		
+		panelNovoMarceneiro.setBounds(10, 115, 173, 113);
+		panelEntrar.add(panelNovoMarceneiro);
+		panelNovoMarceneiro.setLayout(null);
+		
+		JLabel lblNovoMarceneiro = new JLabel("Novo Marceneiro");
+		lblNovoMarceneiro.setBounds(10, 11, 107, 14);
+		panelNovoMarceneiro.add(lblNovoMarceneiro);
+		
+		JButton btnNewButton = new JButton("Cadastrar");
+		btnNewButton.addActionListener(new ActionListener() {
+
+	public void actionPerformed(ActionEvent arg0) {
+				Cadastrar.getInstance().setVisible(true);;
+				Cadastrar.getInstance().rdbtnCliente.setVisible(false);
+				Cadastrar.getInstance().rdbtnMarceneiro.setVisible(false);
+				Cadastrar.getInstance().rdbtnVendedor.setSelected(true);
+			}
+		});
+		btnNewButton.setBounds(10, 36, 153, 66);
+		panelNovoMarceneiro.add(btnNewButton);
 		panelPrincipal.setBounds(0, 0, 414, 239);
 		contentPane.add(panelPrincipal);
 		panelPrincipal.setLayout(null);
@@ -86,80 +159,5 @@ public class Login extends JFrame {
 		});
 		btnRelatorios.setBounds(10, 156, 116, 52);
 		panelPrincipal.add(btnRelatorios);
-		
-		final JPanel panelEntrar = new JPanel();
-		panelEntrar.setBounds(10, 11, 414, 239);
-		contentPane.add(panelEntrar);
-		panelEntrar.setLayout(null);
-		
-		JPanel panelLogin = new JPanel();
-		panelLogin.setBounds(186, 11, 218, 114);
-		panelEntrar.add(panelLogin);
-		panelLogin.setLayout(null);
-		
-		JLabel lblLogin = new JLabel("Login:");
-		lblLogin.setBounds(33, 11, 46, 14);
-		panelLogin.add(lblLogin);
-		
-		JLabel lblSenha = new JLabel("Senha:");
-		lblSenha.setBounds(30, 46, 46, 14);
-		panelLogin.add(lblSenha);
-		
-		tfNomeLogin = new JTextField();
-		tfNomeLogin.setBounds(84, 11, 116, 20);
-		panelLogin.add(tfNomeLogin);
-		tfNomeLogin.setColumns(10);
-		
-		pwdSenha = new JPasswordField();
-		pwdSenha.setBounds(84, 40, 116, 20);
-		panelLogin.add(pwdSenha);
-		pwdSenha.setText("senha");
-		
-		JButton btnLogin = new JButton("Entrar");
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-					/*try {
-						Fachada.getInstance().buscarVendedor(tfNomeLogin.getText()).ValidaSenha(new String(pwdSenha.getPassword()));
-					} catch (PessoaNaoEncontradaException e2) {
-						// TODO Auto-generated catch block
-						e2.printStackTrace();
-					}*/
-					
-					try {
-						Fachada.getInstance().Logar(Fachada.getInstance().buscarVendedor(tfNomeLogin.getText()));
-					} catch (PessoaNaoEncontradaException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					panelEntrar.setVisible(false);
-					panelPrincipal.setVisible(true);
-				
-				
-			}
-		});
-		btnLogin.setBounds(107, 67, 89, 23);
-		panelLogin.add(btnLogin);
-		
-		panelNovoMarceneiro.setBounds(10, 115, 173, 113);
-		panelEntrar.add(panelNovoMarceneiro);
-		panelNovoMarceneiro.setLayout(null);
-		
-		JLabel lblNovoMarceneiro = new JLabel("Novo Marceneiro");
-		lblNovoMarceneiro.setBounds(10, 11, 107, 14);
-		panelNovoMarceneiro.add(lblNovoMarceneiro);
-		
-		JButton btnNewButton = new JButton("Cadastrar");
-		btnNewButton.addActionListener(new ActionListener() {
-
-	public void actionPerformed(ActionEvent arg0) {
-				Cadastrar.getInstance().setVisible(true);;
-				Cadastrar.getInstance().rdbtnCliente.setVisible(false);
-				Cadastrar.getInstance().rdbtnMarceneiro.setVisible(false);
-				Cadastrar.getInstance().rdbtnVendedor.setSelected(true);
-			}
-		});
-		btnNewButton.setBounds(10, 36, 153, 66);
-		panelNovoMarceneiro.add(btnNewButton);
 	}
 }

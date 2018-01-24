@@ -41,7 +41,6 @@ import java.awt.Component;;
 public class Vendas extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtBuscarVendas;
 	private JTextField tfAltura;
 	private JTextField tfDiametro;
 	private JTextField tfNomeDoCliente;
@@ -49,7 +48,9 @@ public class Vendas extends JFrame {
 	final JPanel panel_NovaVenda = new JPanel();
 	private DefaultListModel<String> modeloPesquisa = new DefaultListModel<String>();
 	
-	
+	final JComboBox<Cor> cbCorTampo = new JComboBox<Cor>();
+	final JComboBox <Cor>cbCorPe = new JComboBox<Cor>();
+
 	private DefaultListModel<String> modeloAdicionarProduto = new DefaultListModel<String>();
 	private ArrayList<Produto> listaDeProdutos = new ArrayList<Produto>();
 	ArrayList<Cor> corList = new ArrayList<Cor>(EnumSet.allOf(Cor.class));
@@ -87,7 +88,8 @@ public class Vendas extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
+		preencherComboCores(cbCorPe);
+		preencherComboCores(cbCorTampo);
 		
 		JPanel panel_Vendas = new JPanel();
 		panel_Vendas.setBounds(10, 11, 714, 400);
@@ -99,39 +101,14 @@ public class Vendas extends JFrame {
 		panel_Vendas.add(lblVendas);
 		lblVendas.setFont(new Font("Tahoma", Font.PLAIN, 32));
 		
-		JPanel panel_pesquizar = new JPanel();
-		panel_pesquizar.setBounds(10, 24, 200, 75);
-		panel_Vendas.add(panel_pesquizar);
-		panel_pesquizar.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Pesquisar");
-		lblNewLabel.setBounds(10, 11, 61, 14);
-		panel_pesquizar.add(lblNewLabel);
-		
-		JButton btnListarVendas = new JButton("Listar Vendas");
-		btnListarVendas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panel_NovaVenda.setVisible(false);
-				pesquisar();
-				
-			}
-		});
-		btnListarVendas.setBounds(20, 36, 180, 23);
-		panel_pesquizar.add(btnListarVendas);
-		
-		txtBuscarVendas = new JTextField();
-		txtBuscarVendas.setBounds(71, 8, 119, 20);
-		panel_pesquizar.add(txtBuscarVendas);
-		txtBuscarVendas.setColumns(10);
-		
 		panel_NovaVenda.setVisible(false);
 		panel_NovaVenda.setBounds(220, 97, 484, 292);
 		panel_Vendas.add(panel_NovaVenda);
 		panel_NovaVenda.setLayout(null);
 		
-		JLabel lblNomeDoCliente = new JLabel("Nome do Cliente:");
-		lblNomeDoCliente.setBounds(5, 11, 91, 14);
-		panel_NovaVenda.add(lblNomeDoCliente);
+		JLabel lblEmailDoCliente = new JLabel("Email do Cliente:");
+		lblEmailDoCliente.setBounds(5, 11, 91, 14);
+		panel_NovaVenda.add(lblEmailDoCliente);
 		
 		JRadioButton rdbtnMesaDeCanto = new JRadioButton("Mesa de Canto");
 		rdbtnMesaDeCanto.setBounds(5, 32, 109, 23);
@@ -168,11 +145,9 @@ public class Vendas extends JFrame {
 		tfDiametro.setBounds(78, 33, 119, 20);
 		panel_AdicionarProduto.add(tfDiametro);
 		
-		final JComboBox<Cor> cbCorTampo = new JComboBox<Cor>();
 		cbCorTampo.setBounds(94, 58, 103, 20);
 		panel_AdicionarProduto.add(cbCorTampo);
 		
-		final JComboBox <Cor>cbCorPe = new JComboBox<Cor>();
 		cbCorPe.setBounds(94, 83, 103, 20);
 		panel_AdicionarProduto.add(cbCorPe);
 		
@@ -219,7 +194,7 @@ public class Vendas extends JFrame {
 		panel_FinalizarVenda.add(JlistaDeProdutos);
 		
 		tfNomeDoCliente = new JTextField();
-		tfNomeDoCliente.setBounds(106, 8, 156, 20);
+		tfNomeDoCliente.setBounds(123, 8, 139, 20);
 		panel_NovaVenda.add(tfNomeDoCliente);
 		tfNomeDoCliente.setColumns(10);
 		
@@ -229,8 +204,7 @@ public class Vendas extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				panel_NovaVenda.setVisible(true);
 	
-				preencherComboCores(cbCorPe);
-				preencherComboCores(cbCorTampo);
+				
 				
 				
 			}
@@ -284,18 +258,5 @@ public class Vendas extends JFrame {
 		modeloAdicionarProduto.clear();
 	}
 	
-	public void pesquisar() {
-		try {
-			Vendedor vendedor = Fachada.getInstance().buscarVendedor(Integer.parseInt(txtBuscarVendas.getText()));
-			for(Venda v: Fachada.getInstance().buscarVendas(vendedor)) {				
-				modeloPesquisa.addElement(v.getCliente().getNome());
-			}
-		} catch (NumberFormatException e) {
-			txtBuscarVendas.setText("Insira ID do vendedor");
-			e.printStackTrace();
-		} catch (PessoaNaoEncontradaException e) {
-			txtBuscarVendas.setText("Vendedor não encontrado");
-			e.printStackTrace();
-		}
-	}
+	
 }

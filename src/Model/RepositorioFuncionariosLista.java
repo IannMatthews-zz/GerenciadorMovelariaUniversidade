@@ -46,10 +46,9 @@ public class RepositorioFuncionariosLista implements IRepositorioPessoas {
 
 	public Pessoa buscar(String email) {
 		for(Pessoa u2 : funcionarios) {
-			if(u2.getContato().getEmail()==email)
+			if(u2.getContato().getEmail().equals(email))
 				return u2;
-			
-		}// TODO Auto-generated method stub
+		}
 		return null;
 	}
 
