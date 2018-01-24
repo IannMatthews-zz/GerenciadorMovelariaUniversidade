@@ -100,9 +100,7 @@ public class Vendas extends JFrame {
 		lblVendas.setBounds(291, 11, 131, 75);
 		panel_Vendas.add(lblVendas);
 		lblVendas.setFont(new Font("Tahoma", Font.PLAIN, 32));
-		
-		panel_NovaVenda.setVisible(false);
-		panel_NovaVenda.setBounds(220, 97, 484, 292);
+		panel_NovaVenda.setBounds(0, 97, 704, 292);
 		panel_Vendas.add(panel_NovaVenda);
 		panel_NovaVenda.setLayout(null);
 		
@@ -162,7 +160,7 @@ public class Vendas extends JFrame {
 		panel_AdicionarProduto.add(btnAdicionar);
 		
 		JPanel panel_FinalizarVenda = new JPanel();
-		panel_FinalizarVenda.setBounds(272, 10, 202, 282);
+		panel_FinalizarVenda.setBounds(272, 10, 432, 282);
 		panel_NovaVenda.add(panel_FinalizarVenda);
 		panel_FinalizarVenda.setLayout(null);
 		
@@ -189,7 +187,7 @@ public class Vendas extends JFrame {
 		btnRemover.setBounds(10, 208, 89, 23);
 		panel_FinalizarVenda.add(btnRemover);
 		
-		JlistaDeProdutos.setBounds(0, 0, 192, 197);
+		JlistaDeProdutos.setBounds(0, 0, 432, 197);
 		JlistaDeProdutos.setModel(modeloAdicionarProduto);
 		panel_FinalizarVenda.add(JlistaDeProdutos);
 		
@@ -197,30 +195,6 @@ public class Vendas extends JFrame {
 		tfNomeDoCliente.setBounds(123, 8, 139, 20);
 		panel_NovaVenda.add(tfNomeDoCliente);
 		tfNomeDoCliente.setColumns(10);
-		
-		
-		JButton btnNovaVenda = new JButton("Nova Venda");
-		btnNovaVenda.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panel_NovaVenda.setVisible(true);
-	
-				
-				
-				
-			}
-		});
-		btnNovaVenda.setBounds(10, 110, 200, 60);
-		panel_Vendas.add(btnNovaVenda);
-		
-		JButton btnCancelarVenda = new JButton("CancelarVenda");
-		btnCancelarVenda.setEnabled(false);
-		btnCancelarVenda.setBounds(10, 181, 200, 60);
-		panel_Vendas.add(btnCancelarVenda);
-		
-		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setEnabled(false);
-		btnExcluir.setBounds(10, 252, 200, 60);
-		panel_Vendas.add(btnExcluir);
 	}
 	
 
