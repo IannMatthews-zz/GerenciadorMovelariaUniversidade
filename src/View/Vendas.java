@@ -41,7 +41,7 @@ import java.awt.Component;;
 public class Vendas extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtBuscarVendas;
 	private JTextField tfAltura;
 	private JTextField tfDiametro;
 	private JTextField tfNomeDoCliente;
@@ -78,6 +78,10 @@ public class Vendas extends JFrame {
 	 * Create the frame.
 	 */
 	public Vendas() {
+<<<<<<< HEAD
+=======
+		setResizable(false);
+>>>>>>> d956d1d017410ba9cffc789b117ea0537452fd3b
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 750, 450);
 		contentPane = new JPanel();
@@ -117,10 +121,10 @@ public class Vendas extends JFrame {
 		btnListarVendas.setBounds(20, 36, 180, 23);
 		panel_pesquizar.add(btnListarVendas);
 		
-		textField = new JTextField();
-		textField.setBounds(71, 8, 119, 20);
-		panel_pesquizar.add(textField);
-		textField.setColumns(10);
+		txtBuscarVendas = new JTextField();
+		txtBuscarVendas.setBounds(71, 8, 119, 20);
+		panel_pesquizar.add(txtBuscarVendas);
+		txtBuscarVendas.setColumns(10);
 		
 		panel_NovaVenda.setVisible(false);
 		panel_NovaVenda.setBounds(220, 97, 484, 292);
@@ -283,7 +287,17 @@ public class Vendas extends JFrame {
 	}
 	
 	public void pesquisar() {
-		for(Venda v: Fachada.getInstance().buscarVendas())
-			modeloPesquisa.addElement(v.getCliente().getNome());
+		try {
+			Vendedor vendedor = Fachada.getInstance().buscarVendedor(Integer.parseInt(txtBuscarVendas.getText()));
+			for(Venda v: Fachada.getInstance().buscarVendas(vendedor)) {				
+				modeloPesquisa.addElement(v.getCliente().getNome());
+			}
+		} catch (NumberFormatException e) {
+			txtBuscarVendas.setText("Insira ID do vendedor");
+			e.printStackTrace();
+		} catch (PessoaNaoEncontradaException e) {
+			txtBuscarVendas.setText("Vendedor não encontrado");
+			e.printStackTrace();
+		}
 	}
 }

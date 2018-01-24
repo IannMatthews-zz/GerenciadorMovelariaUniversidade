@@ -129,6 +129,39 @@ public class TelaPrincipal extends JFrame {
 		panelMarceneiro.setVisible(false);
 
 		panelCadastrarVendedor.setVisible(false);
+
+		panelVendedor.setLayout(null);
+		panelVendedor.setBounds(0, 0, 684, 389);
+		contentPane.add(panelVendedor);
+
+		JLabel lblVendedor = new JLabel("Vendedor");
+		lblVendedor.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblVendedor.setHorizontalAlignment(SwingConstants.CENTER);
+		lblVendedor.setBounds(0, 0, 684, 45);
+		panelVendedor.add(lblVendedor);
+
+		JButton btnGerenciarClientes = new JButton("Gerenciar Clientes");
+		btnGerenciarClientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				apagarTelas();
+				panelGerenciarClientes.setVisible(true);
+			}
+		});
+		btnGerenciarClientes.setBounds(250, 56, 200, 100);
+		panelVendedor.add(btnGerenciarClientes);
+
+		JButton btnGerenciarVendas = new JButton("Gerenciar Vendas");
+		btnGerenciarVendas.setBounds(250, 167, 200, 100);
+		btnGerenciarVendas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Vendas.getInstance().setVisible(true);
+			}
+		});
+		panelVendedor.add(btnGerenciarVendas);
+
+		JButton btnFazerPedido = new JButton("Fazer Pedido");
+		btnFazerPedido.setBounds(250, 278, 200, 100);
+		panelVendedor.add(btnFazerPedido);
 		panelCadastrarVendedor.setBounds(213, 11, 471, 378);
 		contentPane.add(panelCadastrarVendedor);
 		panelCadastrarVendedor.setLayout(null);
@@ -195,9 +228,10 @@ public class TelaPrincipal extends JFrame {
 		JButton bntConcluir = new JButton("Concluir");
 		bntConcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				Fachada.getInstance().cadastrar(fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(),Integer.parseInt(txtDDD.getText()) , Integer.parseInt(txtNumero.getText()), null));
-				
+
+				Fachada.getInstance().cadastrar(fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(),
+						Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()), null));
+
 			}
 		});
 		bntConcluir.setBounds(239, 290, 99, 23);
@@ -818,44 +852,9 @@ public class TelaPrincipal extends JFrame {
 		lblExcluirClienteAviso.setBounds(10, 142, 203, 30);
 		panelExcluirCliente.add(lblExcluirClienteAviso);
 
-		panelVendedor.setLayout(null);
-		panelVendedor.setBounds(0, 0, 684, 389);
-		contentPane.add(panelVendedor);
-
-		JLabel lblVendedor = new JLabel("Vendedor");
-		lblVendedor.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblVendedor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblVendedor.setBounds(0, 0, 684, 45);
-		panelVendedor.add(lblVendedor);
-
 		// LIMPAR TELA NA INICIALIZACAO
 		apagarTelas();
 		panelLogin.setVisible(true);
-		// FIM INICIALIZACAO
-
-		JButton btnGerenciarClientes = new JButton("Gerenciar Clientes");
-		btnGerenciarClientes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				apagarTelas();
-				panelGerenciarClientes.setVisible(true);
-			}
-		});
-		btnGerenciarClientes.setBounds(250, 56, 200, 100);
-		panelVendedor.add(btnGerenciarClientes);
-
-		JButton btnGerenciarVendas = new JButton("Gerenciar Vendas");
-		btnGerenciarVendas.setBounds(250, 167, 200, 100);
-		btnGerenciarVendas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Vendas.getInstance().setVisible(true);
-				;
-			}
-		});
-		panelVendedor.add(btnGerenciarVendas);
-
-		JButton btnFazerPedido = new JButton("Fazer Pedido");
-		btnFazerPedido.setBounds(250, 278, 200, 100);
-		panelVendedor.add(btnFazerPedido);
 
 		panelCadastroCliente.setBounds(0, 0, 684, 389);
 		contentPane.add(panelCadastroCliente);
@@ -906,13 +905,11 @@ public class TelaPrincipal extends JFrame {
 		panelMarceneiro.setVisible(false);
 		panelCadastrarVendedor.setVisible(false);
 	}
-	
+
 	public void cadastrarVendedor() {
-		Vendedor vendedor = fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(),Integer.parseInt(txtDDD.getText()) , Integer.parseInt(txtNumero.getText()), null);
+		Vendedor vendedor = fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(),
+				Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()), null);
 		Fachada.getInstance().cadastrar(vendedor);
 	}
-	
-	
-	
-	
+
 }

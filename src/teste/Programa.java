@@ -24,7 +24,7 @@ public class Programa {
 		ArrayList<Produto> produtosC1 = new ArrayList<Produto>();
 		ArrayList<Produto> produtosC2 = new ArrayList<Produto>();
 		
-		produtosC2.add(new Produto());
+//		produtosC2.add(new Produto());
 		
 		Venda v1 = new Venda(produtosC2, c2, bruno, new Frete(new Localizacao("rua", 5)), 5);
 		Venda v2 = new Venda(produtosC1,c1,iann,null,5);
