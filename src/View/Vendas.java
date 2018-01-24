@@ -78,10 +78,8 @@ public class Vendas extends JFrame {
 	 * Create the frame.
 	 */
 	public Vendas() {
-<<<<<<< HEAD
-=======
 		setResizable(false);
->>>>>>> d956d1d017410ba9cffc789b117ea0537452fd3b
+//>>>>>>> d956d1d017410ba9cffc789b117ea0537452fd3b
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 750, 450);
 		contentPane = new JPanel();

@@ -17,8 +17,8 @@ public class Programa {
 	public static void main(String[] args) {
 		System.out.println("Gerenciador movelaria");
 		
-		Vendedor iann = new Vendedor("Iann", "iann@email.com",81,99999999, new Localizacao("rua", 1));
-		Vendedor bruno = new Vendedor("bruno", "bruno@email.com",81,99999999, new Localizacao("rua", 2));
+		Vendedor iann = new Vendedor("Iann", "iann@email.com", "iann",81,99999999, new Localizacao("rua", 1));
+		Vendedor bruno = new Vendedor("bruno", "bruno@email.com", "bruno",81,99999999, new Localizacao("rua", 2));
 		Cliente c1 = new Cliente("Iann", "cliente1@email.com",81,99999999, new Localizacao("rua", 3));
 		Cliente c2 = new Cliente("cliente2", "cliente2@email.com",81,99999999, new Localizacao("rua", 0));
 		ArrayList<Produto> produtosC1 = new ArrayList<Produto>();

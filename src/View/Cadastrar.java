@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 import Controller.Fachada;
 import Model.Cliente;
 import Model.Fabrica;
+import Model.Localizacao;
 import Model.Marceneiro;
 import Model.Vendedor;
 
@@ -20,6 +21,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ButtonGroup;
 
 public class Cadastrar extends JFrame {
 
@@ -38,7 +40,8 @@ public class Cadastrar extends JFrame {
 	JRadioButton rdbtnMarceneiro = new JRadioButton("Marceneiro");
 
 	private static Cadastrar instance;
-	private Fabrica fabrica = new Fabrica();
+	// private Fabrica fabrica = new Fabrica();
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -60,6 +63,7 @@ public class Cadastrar extends JFrame {
 	 * Create the frame.
 	 */
 	public Cadastrar() {
+		setTitle("Cadastro");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -86,7 +90,6 @@ public class Cadastrar extends JFrame {
 		panel.add(lblEmail);
 
 		txtEmail = new JTextField();
-		txtEmail.setText("Email");
 		txtEmail.setBounds(77, 33, 209, 20);
 		panel.add(txtEmail);
 		txtEmail.setColumns(10);
@@ -128,19 +131,39 @@ public class Cadastrar extends JFrame {
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				if (rdbtnCliente.isSelected()) {
+					// Cliente cliente = fabrica.getCliente(tfNome.getText(), txtEmail.getText(),
+					// Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()),
+					// fabrica.getLocalizacao(txtEndereco.getText(),
+					// Integer.parseInt(txtCep.getText())));
+
+					Cliente cliente = new Cliente(tfNome.getText(), txtEmail.getText(),
+							Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()),
+							new Localizacao(txtEndereco.getText(), Integer.parseInt(txtCep.getText())));
+					Fachada.getInstance().cadastrar(cliente);
+
+					Fachada.getInstance().cadastrar(cliente);
+				}
 				if (senha.getPassword().equals(repetirSenha.getPassword())) {
-					if (rdbtnCliente.isSelected()) {
-						Cliente cliente = fabrica.getCliente(tfNome.getText(), txtEmail.getText(),
-								Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()),
-								fabrica.getLocalizacao(txtEndereco.getText(), Integer.parseInt(txtCep.getText())));
-						Fachada.getInstance().cadastrar(cliente);
-					}
 					if (rdbtnVendedor.isSelected()) {
-						Vendedor vendedor = fabrica.getVendedor(tfNome.getText(), txtEmail.getText(),
+						// Vendedor vendedor = fabrica.getVendedor(tfNome.getText(), txtEmail.getText(),
+						// new String(senha.getPassword()), Integer.parseInt(txtDDD.getText()),
+						// Integer.parseInt(txtNumero.getText()),
+						// fabrica.getLocalizacao(txtEndereco.getText(),
+						// Integer.parseInt(txtCep.getText())));
+						Vendedor vendedor = new Vendedor(tfNome.getText(), txtEmail.getText(),
 								new String(senha.getPassword()), Integer.parseInt(txtDDD.getText()),
 								Integer.parseInt(txtNumero.getText()),
-								fabrica.getLocalizacao(txtEndereco.getText(), Integer.parseInt(txtCep.getText())));
+								new Localizacao(txtEndereco.getText(), Integer.parseInt(txtCep.getText())));
+
 						Fachada.getInstance().cadastrar(vendedor);
+					} else if (rdbtnMarceneiro.isSelected()) {
+						Marceneiro marceneiro = new Marceneiro(tfNome.getText(), txtEmail.getText(),
+								new String(senha.getPassword()), Integer.parseInt(txtDDD.getText()),
+								Integer.parseInt(txtNumero.getText()),
+								new Localizacao(txtEndereco.getText(), Integer.parseInt(txtCep.getText())));
+
+						// Fachada.getInstance().cadastrar(marceneiro);
 					}
 					/*
 					 * if(rdbtnMarceneiro.isSelected()) { Marceneiro marceneiro =
@@ -154,7 +177,7 @@ public class Cadastrar extends JFrame {
 				}
 			}
 		});
-		btnCadastrar.setBounds(304, 170, 89, 58);
+		btnCadastrar.setBounds(296, 170, 108, 58);
 		panel.add(btnCadastrar);
 
 		JLabel lblSenha = new JLabel("Senha:");
@@ -173,19 +196,23 @@ public class Cadastrar extends JFrame {
 		repetirSenha.setBounds(127, 185, 159, 20);
 		panel.add(repetirSenha);
 		repetirSenha.setColumns(10);
+		buttonGroup.add(rdbtnMarceneiro);
 
 		rdbtnMarceneiro.setBounds(304, 7, 109, 23);
 		panel.add(rdbtnMarceneiro);
+		buttonGroup.add(rdbtnVendedor);
 
 		rdbtnVendedor.setBounds(304, 36, 109, 23);
 		panel.add(rdbtnVendedor);
+		buttonGroup.add(rdbtnCliente);
+		rdbtnCliente.setSelected(true);
 
 		rdbtnCliente.setBounds(304, 67, 109, 23);
 		panel.add(rdbtnCliente);
 	}
-	
+
 	public static Cadastrar getInstance() {
-		if(Cadastrar.instance == null) {
+		if (Cadastrar.instance == null) {
 			Cadastrar.instance = new Cadastrar();
 		}
 		return Cadastrar.instance;

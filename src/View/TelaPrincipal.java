@@ -118,6 +118,22 @@ public class TelaPrincipal extends JFrame {
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
+		
+		JMenu mnHome = new JMenu("Home");
+		mnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		menuBar.add(mnHome);
+		
+		JMenuItem mntmHome = new JMenuItem("Home");
+		mntmHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				apagarTelas();
+				panelLogin.setVisible(true);
+			}
+		});
+		mnHome.add(mntmHome);
 
 		JMenu mnUsuario = new JMenu("Usuario");
 		menuBar.add(mnUsuario);
@@ -129,170 +145,6 @@ public class TelaPrincipal extends JFrame {
 		panelMarceneiro.setVisible(false);
 
 		panelCadastrarVendedor.setVisible(false);
-
-		panelVendedor.setLayout(null);
-		panelVendedor.setBounds(0, 0, 684, 389);
-		contentPane.add(panelVendedor);
-
-		JLabel lblVendedor = new JLabel("Vendedor");
-		lblVendedor.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblVendedor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblVendedor.setBounds(0, 0, 684, 45);
-		panelVendedor.add(lblVendedor);
-
-		JButton btnGerenciarClientes = new JButton("Gerenciar Clientes");
-		btnGerenciarClientes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				apagarTelas();
-				panelGerenciarClientes.setVisible(true);
-			}
-		});
-		btnGerenciarClientes.setBounds(250, 56, 200, 100);
-		panelVendedor.add(btnGerenciarClientes);
-
-		JButton btnGerenciarVendas = new JButton("Gerenciar Vendas");
-		btnGerenciarVendas.setBounds(250, 167, 200, 100);
-		btnGerenciarVendas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Vendas.getInstance().setVisible(true);
-			}
-		});
-		panelVendedor.add(btnGerenciarVendas);
-
-		JButton btnFazerPedido = new JButton("Fazer Pedido");
-		btnFazerPedido.setBounds(250, 278, 200, 100);
-		panelVendedor.add(btnFazerPedido);
-		panelCadastrarVendedor.setBounds(213, 11, 471, 378);
-		contentPane.add(panelCadastrarVendedor);
-		panelCadastrarVendedor.setLayout(null);
-
-		JLabel lblNovoVendedor = new JLabel("Novo Vendedor");
-		lblNovoVendedor.setBounds(10, 11, 160, 25);
-		lblNovoVendedor.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		panelCadastrarVendedor.add(lblNovoVendedor);
-
-		JLabel label_3 = new JLabel("Nome:");
-		label_3.setBounds(20, 47, 41, 14);
-		panelCadastrarVendedor.add(label_3);
-
-		JLabel label_4 = new JLabel("E-mail:");
-		label_4.setBounds(19, 72, 42, 14);
-		panelCadastrarVendedor.add(label_4);
-
-		JLabel label_5 = new JLabel("DDD:");
-		label_5.setBounds(20, 97, 41, 14);
-		panelCadastrarVendedor.add(label_5);
-
-		JLabel label_6 = new JLabel("N\u00FAmero:");
-		label_6.setBounds(71, 97, 58, 14);
-		panelCadastrarVendedor.add(label_6);
-
-		txtNomeVendedor = new JTextField();
-		txtNomeVendedor.setBounds(75, 47, 372, 20);
-		txtNomeVendedor.setColumns(10);
-		panelCadastrarVendedor.add(txtNomeVendedor);
-
-		txtEmail = new JTextField();
-		txtEmail.setBounds(75, 69, 372, 20);
-		txtEmail.setColumns(10);
-		panelCadastrarVendedor.add(txtEmail);
-
-		JLabel label_7 = new JLabel("Endere\u00E7o:");
-		label_7.setBounds(20, 152, 58, 14);
-		panelCadastrarVendedor.add(label_7);
-
-		txtCep = new JTextField();
-		txtCep.setBounds(56, 177, 391, 20);
-		txtCep.setColumns(10);
-		panelCadastrarVendedor.add(txtCep);
-
-		JLabel label_8 = new JLabel("CEP:");
-		label_8.setBounds(20, 177, 29, 14);
-		panelCadastrarVendedor.add(label_8);
-
-		txtEndereco = new JTextField();
-		txtEndereco.setBounds(79, 149, 368, 20);
-		txtEndereco.setColumns(10);
-		panelCadastrarVendedor.add(txtEndereco);
-
-		txtDDD = new JTextField();
-		txtDDD.setBounds(20, 122, 49, 20);
-		txtDDD.setColumns(10);
-		panelCadastrarVendedor.add(txtDDD);
-
-		txtNumero = new JTextField();
-		txtNumero.setBounds(79, 122, 108, 20);
-		txtNumero.setColumns(10);
-		panelCadastrarVendedor.add(txtNumero);
-
-		JButton bntConcluir = new JButton("Concluir");
-		bntConcluir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				Fachada.getInstance().cadastrar(fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(),
-						Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()), null));
-
-			}
-		});
-		bntConcluir.setBounds(239, 290, 99, 23);
-		panelCadastrarVendedor.add(bntConcluir);
-
-		JButton button_1 = new JButton("Cancelar");
-		button_1.setBounds(348, 290, 99, 23);
-		panelCadastrarVendedor.add(button_1);
-
-		JLabel label_9 = new JLabel("ID do novo cliente:");
-		label_9.setBounds(10, 328, 91, 14);
-		panelCadastrarVendedor.add(label_9);
-
-		JLabel label_10 = new JLabel("");
-		label_10.setBounds(348, 240, 0, 0);
-		label_10.setFont(new Font("Tahoma", Font.BOLD, 11));
-		panelCadastrarVendedor.add(label_10);
-
-		panelMarceneiro.setBounds(0, 0, 684, 389);
-		contentPane.add(panelMarceneiro);
-		panelMarceneiro.setLayout(null);
-
-		JLabel lblMarceneiro = new JLabel("Marceneiro");
-		lblMarceneiro.setBounds(0, 0, 684, 14);
-		panelMarceneiro.add(lblMarceneiro);
-
-		JButton btnNewButton = new JButton("Cadastrar Vendedor");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panelCadastrarVendedor.setVisible(true);
-
-			}
-		});
-		btnNewButton.setBounds(10, 167, 200, 100);
-		panelMarceneiro.add(btnNewButton);
-
-		JButton btnExcluirVendedor = new JButton("Excluir Vendedor");
-		btnExcluirVendedor.setBounds(10, 278, 200, 100);
-		panelMarceneiro.add(btnExcluirVendedor);
-
-		JPanel panelPesquisar = new JPanel();
-		panelPesquisar.setLayout(null);
-		panelPesquisar.setBounds(10, 25, 200, 100);
-		panelMarceneiro.add(panelPesquisar);
-
-		JLabel lblPesquisar = new JLabel("Pesquisar");
-		lblPesquisar.setBounds(10, 11, 61, 14);
-		panelPesquisar.add(lblPesquisar);
-
-		JButton btnPesquisar = new JButton("Pesquisar");
-		btnPesquisar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnPesquisar.setBounds(10, 66, 180, 23);
-		panelPesquisar.add(btnPesquisar);
-
-		txtPesquisar = new JTextField();
-		txtPesquisar.setColumns(10);
-		txtPesquisar.setBounds(71, 8, 119, 20);
-		panelPesquisar.add(txtPesquisar);
 
 		panelLogin.setBounds(0, 0, 684, 389);
 		contentPane.add(panelLogin);
@@ -386,6 +238,34 @@ public class TelaPrincipal extends JFrame {
 		lblMarceneiro_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblMarceneiro_1.setBounds(407, 43, 191, 37);
 		panelLogin.add(lblMarceneiro_1);
+
+		JButton btnCriarConta = new JButton("Criar conta.");
+		btnCriarConta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Cadastrar.getInstance().setVisible(true);
+			}
+		});
+		btnCriarConta.setBounds(283, 360, 108, 29);
+		panelLogin.add(btnCriarConta);
+
+		final JLabel lblTesteCadastro = new JLabel("0");
+		lblTesteCadastro.setBounds(72, 316, 46, 14);
+		panelLogin.add(lblTesteCadastro);
+
+		JButton btnAtualizar = new JButton("Atualizar");
+		btnAtualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					lblTesteCadastro.setText(String.valueOf(Fachada.getInstance().buscarCliente(1).getNome()));
+				} catch (PessoaNaoEncontradaException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		btnAtualizar.setBounds(51, 360, 89, 23);
+		panelLogin.add(btnAtualizar);
+		panelLogin.setVisible(true);
 		panelLogin.setVisible(true);
 
 		panelGerenciarClientes.setBounds(0, 0, 684, 389);
@@ -852,13 +732,178 @@ public class TelaPrincipal extends JFrame {
 		lblExcluirClienteAviso.setBounds(10, 142, 203, 30);
 		panelExcluirCliente.add(lblExcluirClienteAviso);
 
-		// LIMPAR TELA NA INICIALIZACAO
-		apagarTelas();
-		panelLogin.setVisible(true);
-
 		panelCadastroCliente.setBounds(0, 0, 684, 389);
 		contentPane.add(panelCadastroCliente);
 		panelCadastroCliente.setLayout(null);
+		panelCadastrarVendedor.setBounds(213, 11, 471, 378);
+		contentPane.add(panelCadastrarVendedor);
+		panelCadastrarVendedor.setLayout(null);
+
+		JLabel lblNovoVendedor = new JLabel("Novo Vendedor");
+		lblNovoVendedor.setBounds(10, 11, 160, 25);
+		lblNovoVendedor.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		panelCadastrarVendedor.add(lblNovoVendedor);
+
+		JLabel label_3 = new JLabel("Nome:");
+		label_3.setBounds(20, 47, 41, 14);
+		panelCadastrarVendedor.add(label_3);
+
+		JLabel label_4 = new JLabel("E-mail:");
+		label_4.setBounds(19, 72, 42, 14);
+		panelCadastrarVendedor.add(label_4);
+
+		JLabel label_5 = new JLabel("DDD:");
+		label_5.setBounds(20, 97, 41, 14);
+		panelCadastrarVendedor.add(label_5);
+
+		JLabel label_6 = new JLabel("N\u00FAmero:");
+		label_6.setBounds(71, 97, 58, 14);
+		panelCadastrarVendedor.add(label_6);
+
+		txtNomeVendedor = new JTextField();
+		txtNomeVendedor.setBounds(75, 47, 372, 20);
+		txtNomeVendedor.setColumns(10);
+		panelCadastrarVendedor.add(txtNomeVendedor);
+
+		txtEmail = new JTextField();
+		txtEmail.setBounds(75, 69, 372, 20);
+		txtEmail.setColumns(10);
+		panelCadastrarVendedor.add(txtEmail);
+
+		JLabel label_7 = new JLabel("Endere\u00E7o:");
+		label_7.setBounds(20, 152, 58, 14);
+		panelCadastrarVendedor.add(label_7);
+
+		txtCep = new JTextField();
+		txtCep.setBounds(56, 177, 391, 20);
+		txtCep.setColumns(10);
+		panelCadastrarVendedor.add(txtCep);
+
+		JLabel label_8 = new JLabel("CEP:");
+		label_8.setBounds(20, 177, 29, 14);
+		panelCadastrarVendedor.add(label_8);
+
+		txtEndereco = new JTextField();
+		txtEndereco.setBounds(79, 149, 368, 20);
+		txtEndereco.setColumns(10);
+		panelCadastrarVendedor.add(txtEndereco);
+
+		txtDDD = new JTextField();
+		txtDDD.setBounds(20, 122, 49, 20);
+		txtDDD.setColumns(10);
+		panelCadastrarVendedor.add(txtDDD);
+
+		txtNumero = new JTextField();
+		txtNumero.setBounds(79, 122, 108, 20);
+		txtNumero.setColumns(10);
+		panelCadastrarVendedor.add(txtNumero);
+
+		JButton bntConcluir = new JButton("Concluir");
+		bntConcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				Fachada.getInstance()
+						.cadastrar(fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(), "senha",
+								Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()),
+								new Localizacao("endereco", 0)));
+
+			}
+		});
+		bntConcluir.setBounds(239, 290, 99, 23);
+		panelCadastrarVendedor.add(bntConcluir);
+
+		JButton button_1 = new JButton("Cancelar");
+		button_1.setBounds(348, 290, 99, 23);
+		panelCadastrarVendedor.add(button_1);
+
+		JLabel label_9 = new JLabel("ID do novo cliente:");
+		label_9.setBounds(10, 328, 91, 14);
+		panelCadastrarVendedor.add(label_9);
+
+		JLabel label_10 = new JLabel("");
+		label_10.setBounds(348, 240, 0, 0);
+		label_10.setFont(new Font("Tahoma", Font.BOLD, 11));
+		panelCadastrarVendedor.add(label_10);
+
+		panelMarceneiro.setBounds(0, 0, 684, 389);
+		contentPane.add(panelMarceneiro);
+		panelMarceneiro.setLayout(null);
+
+		JLabel lblMarceneiro = new JLabel("Marceneiro");
+		lblMarceneiro.setBounds(0, 0, 684, 14);
+		panelMarceneiro.add(lblMarceneiro);
+
+		JButton btnNewButton = new JButton("Cadastrar Vendedor");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelCadastrarVendedor.setVisible(true);
+
+			}
+		});
+		btnNewButton.setBounds(10, 167, 200, 100);
+		panelMarceneiro.add(btnNewButton);
+
+		JButton btnExcluirVendedor = new JButton("Excluir Vendedor");
+		btnExcluirVendedor.setBounds(10, 278, 200, 100);
+		panelMarceneiro.add(btnExcluirVendedor);
+
+		JPanel panelPesquisar = new JPanel();
+		panelPesquisar.setLayout(null);
+		panelPesquisar.setBounds(10, 25, 200, 100);
+		panelMarceneiro.add(panelPesquisar);
+
+		JLabel lblPesquisar = new JLabel("Pesquisar");
+		lblPesquisar.setBounds(10, 11, 61, 14);
+		panelPesquisar.add(lblPesquisar);
+
+		JButton btnPesquisar = new JButton("Pesquisar");
+		btnPesquisar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnPesquisar.setBounds(10, 66, 180, 23);
+		panelPesquisar.add(btnPesquisar);
+
+		txtPesquisar = new JTextField();
+		txtPesquisar.setColumns(10);
+		txtPesquisar.setBounds(71, 8, 119, 20);
+		panelPesquisar.add(txtPesquisar);
+
+		panelVendedor.setLayout(null);
+		panelVendedor.setBounds(0, 0, 684, 389);
+		contentPane.add(panelVendedor);
+
+		JLabel lblVendedor = new JLabel("Vendedor");
+		lblVendedor.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblVendedor.setHorizontalAlignment(SwingConstants.CENTER);
+		lblVendedor.setBounds(0, 0, 684, 45);
+		panelVendedor.add(lblVendedor);
+
+		JButton btnGerenciarClientes = new JButton("Gerenciar Clientes");
+		btnGerenciarClientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				apagarTelas();
+				panelGerenciarClientes.setVisible(true);
+			}
+		});
+		btnGerenciarClientes.setBounds(250, 56, 200, 100);
+		panelVendedor.add(btnGerenciarClientes);
+
+		JButton btnGerenciarVendas = new JButton("Gerenciar Vendas");
+		btnGerenciarVendas.setBounds(250, 167, 200, 100);
+		btnGerenciarVendas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Vendas.getInstance().setVisible(true);
+			}
+		});
+		panelVendedor.add(btnGerenciarVendas);
+
+		JButton btnFazerPedido = new JButton("Fazer Pedido");
+		btnFazerPedido.setBounds(250, 278, 200, 100);
+		panelVendedor.add(btnFazerPedido);
+
+		// LIMPAR TELA NA INICIALIZACAO
+		apagarTelas();
 
 		panelFazerPedido.setBounds(0, 0, 684, 389);
 		contentPane.add(panelFazerPedido);
@@ -907,9 +952,9 @@ public class TelaPrincipal extends JFrame {
 	}
 
 	public void cadastrarVendedor() {
-		Vendedor vendedor = fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(),
-				Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()), null);
+		Vendedor vendedor = fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(), "senha",
+				Integer.parseInt(txtDDD.getText()), Integer.parseInt(txtNumero.getText()),
+				new Localizacao("endereco", 0));
 		Fachada.getInstance().cadastrar(vendedor);
 	}
-
 }
