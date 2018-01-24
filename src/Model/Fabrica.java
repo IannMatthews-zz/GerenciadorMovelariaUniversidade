@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 import Model.Produto.Cor;
 
 public class Fabrica {
@@ -21,5 +23,10 @@ public class Fabrica {
 	
 	public Localizacao getLocalizacao(String endereco, int CEP) {
 		return new Localizacao(endereco, CEP);
+	}
+	
+	public Venda getVenda(ArrayList<Produto> produto, Cliente cliente, Vendedor vendedor, Frete frete,int prazoDeEntrega)
+	{
+		return new Venda(produto, cliente, vendedor, frete, prazoDeEntrega);
 	}
 }

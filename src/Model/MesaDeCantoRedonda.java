@@ -2,14 +2,14 @@ package Model;
 
 public class MesaDeCantoRedonda extends Produto{
 
-	private final String NOME = "Mesa de canto Redonda";
+	private final static String NOME = "Mesa de canto Redonda";
 	private double altura;
 	private double diametro;
 	Cor pes;
 	Cor tampo;
 	
 	public MesaDeCantoRedonda(double altura, double diameatro, Cor pes, Cor tampo) {
-		super();
+		super(NOME);
 		this.altura = altura;
 		this.diametro = diameatro;
 		this.tampo = tampo;

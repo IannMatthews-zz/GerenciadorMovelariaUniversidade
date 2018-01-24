@@ -20,15 +20,23 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.ListModel;
 import javax.swing.JTable;
 import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
 
+import Model.Cliente;
 import Model.Fabrica;
 import Model.MesaDeCantoRedonda;
+import Model.PessoaNaoEncontradaException;
 import Model.Produto;
 import Model.Produto.Cor;
-import javax.swing.JList;;
+import Model.Venda;
+import Model.Vendedor;
+
+import javax.swing.JList;
+import javax.swing.JScrollBar;
+import java.awt.Component;;
 
 public class Vendas extends JFrame {
 
@@ -37,8 +45,16 @@ public class Vendas extends JFrame {
 	private JTextField tfAltura;
 	private JTextField tfDiametro;
 	private JTextField tfNomeDoCliente;
+	JList JlistaDeProdutos = new JList();
+	final JPanel panel_NovaVenda = new JPanel();
+	private DefaultListModel<String> modeloPesquisa = new DefaultListModel<String>();
 	
-	private DefaultListModel modeloVenda;
+	
+	private DefaultListModel<String> modeloAdicionarProduto = new DefaultListModel<String>();
+	private ArrayList<Produto> listaDeProdutos = new ArrayList<Produto>();
+	ArrayList<Cor> corList = new ArrayList<Cor>(EnumSet.allOf(Cor.class));
+	private Fabrica fabrica = new Fabrica();
+	private static Vendas instance;
 
 	/**
 	 * Launch the application.
@@ -69,7 +85,6 @@ public class Vendas extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		modeloVenda = new DefaultListModel<Produto>();
 		
 		
 		JPanel panel_Vendas = new JPanel();
@@ -92,7 +107,14 @@ public class Vendas extends JFrame {
 		panel_pesquizar.add(lblNewLabel);
 		
 		JButton btnListarVendas = new JButton("Listar Vendas");
-		btnListarVendas.setBounds(10, 36, 180, 23);
+		btnListarVendas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel_NovaVenda.setVisible(false);
+				pesquisar();
+				
+			}
+		});
+		btnListarVendas.setBounds(20, 36, 180, 23);
 		panel_pesquizar.add(btnListarVendas);
 		
 		textField = new JTextField();
@@ -100,7 +122,6 @@ public class Vendas extends JFrame {
 		panel_pesquizar.add(textField);
 		textField.setColumns(10);
 		
-		final JPanel panel_NovaVenda = new JPanel();
 		panel_NovaVenda.setVisible(false);
 		panel_NovaVenda.setBounds(220, 97, 484, 292);
 		panel_Vendas.add(panel_NovaVenda);
@@ -145,7 +166,7 @@ public class Vendas extends JFrame {
 		tfDiametro.setBounds(78, 33, 119, 20);
 		panel_AdicionarProduto.add(tfDiametro);
 		
-		final JComboBox cbCorTampo = new JComboBox();
+		final JComboBox<Cor> cbCorTampo = new JComboBox<Cor>();
 		cbCorTampo.setBounds(94, 58, 103, 20);
 		panel_AdicionarProduto.add(cbCorTampo);
 		
@@ -156,6 +177,8 @@ public class Vendas extends JFrame {
 		JButton btnAdicionar = new JButton("Adicionar");
 		btnAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				adcionarProduto(fabrica.getProduto(Double.parseDouble(tfAltura.getText()), Double.parseDouble(tfDiametro.getText()), cbCorPe.getItemAt(cbCorPe.getSelectedIndex()), cbCorTampo.getItemAt(cbCorTampo.getSelectedIndex())));
+				
 			}
 		});
 		btnAdicionar.setBounds(10, 114, 187, 23);
@@ -167,17 +190,31 @@ public class Vendas extends JFrame {
 		panel_FinalizarVenda.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Finalizar Venda");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					finalizarVenda();
+				} catch (PessoaNaoEncontradaException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		btnNewButton.setBounds(10, 242, 181, 29);
 		panel_FinalizarVenda.add(btnNewButton);
 		
 		JButton btnRemover = new JButton("Remover");
+		btnRemover.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				removerProduto();
+			}
+		});
 		btnRemover.setBounds(10, 208, 89, 23);
 		panel_FinalizarVenda.add(btnRemover);
 		
-		JList listProdutos = new JList();
-		listProdutos.setBounds(0, 0, 192, 197);
-		listProdutos.setModel(modeloVenda);
-		panel_FinalizarVenda.add(listProdutos);
+		JlistaDeProdutos.setBounds(0, 0, 192, 197);
+		JlistaDeProdutos.setModel(modeloAdicionarProduto);
+		panel_FinalizarVenda.add(JlistaDeProdutos);
 		
 		tfNomeDoCliente = new JTextField();
 		tfNomeDoCliente.setBounds(106, 8, 156, 20);
@@ -189,6 +226,7 @@ public class Vendas extends JFrame {
 		btnNovaVenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_NovaVenda.setVisible(true);
+	
 				preencherComboCores(cbCorPe);
 				preencherComboCores(cbCorTampo);
 				
@@ -209,19 +247,16 @@ public class Vendas extends JFrame {
 		panel_Vendas.add(btnExcluir);
 	}
 	
-	private static Vendas instance;
 
+	
+	
+	
 	public static Vendas getInstance() {
 		if(Vendas.instance == null) {
 			Vendas.instance = new Vendas();
 		}
 		return Vendas.instance;
 	}
-	private ArrayList<Produto> venda = new ArrayList<Produto>();
-	ArrayList<Cor> corList = new ArrayList<Cor>(EnumSet.allOf(Cor.class));
-	private Fabrica fabrica = new Fabrica();
-	
-	
 	
 	public void preencherComboCores(JComboBox cb) {
 		for(Cor cor: corList) {
@@ -229,5 +264,26 @@ public class Vendas extends JFrame {
 		}
 	}
 
+	public void adcionarProduto(Produto p) {
+		modeloAdicionarProduto.addElement(p.getNome() +" "+ p.getPreco()+"Altura: "+ ((MesaDeCantoRedonda)p).getAltura()+"Diametro: "+((MesaDeCantoRedonda)p).getDiametro());
+		listaDeProdutos.add(p);
+	}
+	public void removerProduto()
+	{
+		listaDeProdutos.remove(JlistaDeProdutos.getSelectedIndex());
+		modeloAdicionarProduto.removeElementAt(JlistaDeProdutos.getSelectedIndex());
+	}
 	
+	public void finalizarVenda() throws PessoaNaoEncontradaException {
+		Cliente cliente = Fachada.getInstance().buscarCliente(tfNomeDoCliente.getText());
+		Vendedor vendedor = Fachada.getInstance().buscarVendedor(1);
+		Fachada.getInstance().adicionar(fabrica.getVenda(listaDeProdutos,cliente , vendedor, null, 5));
+		listaDeProdutos.clear();
+		modeloAdicionarProduto.clear();
+	}
+	
+	public void pesquisar() {
+		for(Venda v: Fachada.getInstance().buscarVendas())
+			modeloPesquisa.addElement(v.getCliente().getNome());
+	}
 }

@@ -95,6 +95,10 @@ public class Fachada {
 	{
 		this.vendas.cancelar(venda);
 	}
+	public ArrayList<Venda>buscarVendas()
+	{
+		return this.vendas.buscar();
+	}
 	
 	public ArrayList<Venda> buscarVendas(Vendedor vendedor)
 	{

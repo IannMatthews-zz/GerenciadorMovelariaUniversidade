@@ -26,6 +26,7 @@ import Model.Fabrica;
 import Model.Localizacao;
 import Model.Pessoa;
 import Model.PessoaNaoEncontradaException;
+import Model.Vendedor;
 
 import java.awt.Component;
 import javax.swing.SwingConstants;
@@ -150,7 +151,7 @@ public class TelaPrincipal extends JFrame {
 		panelCadastrarVendedor.add(label_5);
 
 		JLabel label_6 = new JLabel("N\u00FAmero:");
-		label_6.setBounds(79, 97, 58, 14);
+		label_6.setBounds(71, 97, 58, 14);
 		panelCadastrarVendedor.add(label_6);
 
 		txtNomeVendedor = new JTextField();
@@ -194,11 +195,9 @@ public class TelaPrincipal extends JFrame {
 		JButton bntConcluir = new JButton("Concluir");
 		bntConcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Localizacao l = fabrica.getLocalizacao(txtEndereco.getText(),
-				// Integer.parseInt(txtCep.getText()));
-				// Fachada.getInstance().cadastrar(fabrica.getVendedor(txtNomeVendedor.getText(),
-				// txtEmail.getText(), Integer.parseInt(txtDDD.getText()),
-				// Integer.parseInt(txtNumero.getText()), l));
+				
+				Fachada.getInstance().cadastrar(fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(),Integer.parseInt(txtDDD.getText()) , Integer.parseInt(txtNumero.getText()), null));
+				
 			}
 		});
 		bntConcluir.setBounds(239, 290, 99, 23);
@@ -249,6 +248,10 @@ public class TelaPrincipal extends JFrame {
 		panelPesquisar.add(lblPesquisar);
 
 		JButton btnPesquisar = new JButton("Pesquisar");
+		btnPesquisar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnPesquisar.setBounds(10, 66, 180, 23);
 		panelPesquisar.add(btnPesquisar);
 
@@ -903,4 +906,13 @@ public class TelaPrincipal extends JFrame {
 		panelMarceneiro.setVisible(false);
 		panelCadastrarVendedor.setVisible(false);
 	}
+	
+	public void cadastrarVendedor() {
+		Vendedor vendedor = fabrica.getVendedor(txtNomeVendedor.getText(), txtEmail.getText(),Integer.parseInt(txtDDD.getText()) , Integer.parseInt(txtNumero.getText()), null);
+		Fachada.getInstance().cadastrar(vendedor);
+	}
+	
+	
+	
+	
 }
