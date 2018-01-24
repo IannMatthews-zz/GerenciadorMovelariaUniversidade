@@ -57,5 +57,12 @@ public class RepositorioFuncionariosLista implements IRepositorioPessoas {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public ArrayList<Pessoa> buscar(){
+		ArrayList<Pessoa> a = new ArrayList<Pessoa>();
+		for(Pessoa p: funcionarios)
+			a.add(p);
+		return a;
+	}
 
 }

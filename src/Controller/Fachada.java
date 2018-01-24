@@ -3,6 +3,8 @@ package Controller;
 import java.util.ArrayList;
 
 import Model.Cliente;
+import Model.Funcionario;
+import Model.Marceneiro;
 import Model.PessoaNaoEncontradaException;
 import Model.Venda;
 import Model.Vendedor;
@@ -11,6 +13,7 @@ public class Fachada {
 	private ControleClientes clientes;
 	private ControleVendedores vendedores;
 	private ControleVendas vendas;
+	private Funcionario usuario;
 	
 	public Fachada() {
 		clientes = new ControleClientes();
@@ -114,6 +117,18 @@ public class Fachada {
 	{
 		this.vendas.entregarProdutos(venda);
 	}
+
+	// modificar para repositorio e controle proprio
+	
+	
+	public void Logar(Funcionario funcionario)
+	{
+		this.usuario = funcionario;
+	}
+	
+	public void desLogar() {
+		this.usuario = null;
+	}
+	
 	
 }
- 

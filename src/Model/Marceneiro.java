@@ -2,9 +2,9 @@ package Model;
 
 public class Marceneiro extends Funcionario {
 
-	public Marceneiro(String nome, String email, int ddd, int numero, Localizacao endereco) {
-		super(nome, email, ddd, numero, endereco);
+	public Marceneiro(String nome, String email, String senha, int ddd, int numero, Localizacao endereco) {
+		super(nome, email, senha, ddd, numero, endereco);
 	}
+}
 	
 
-}
