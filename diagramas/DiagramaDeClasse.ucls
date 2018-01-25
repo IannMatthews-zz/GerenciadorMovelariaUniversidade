@@ -1,410 +1,503 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="controle.ControleClientes" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/controle/ControleClientes.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2656" y="992"/>    
+  <class id="1" language="java" name="Controller.ControleClientes" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Controller/ControleClientes.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1028" y="1210"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="controle.ControleVendas" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/controle/ControleVendas.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2552" y="169"/>    
+  <class id="2" language="java" name="Controller.Fachada" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Controller/Fachada.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="734" y="506"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="controle.ControleVendedores" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/controle/ControleVendedores.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2599" y="517"/>    
+  <class id="3" language="java" name="Controller.ControleVendedores" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Controller/ControleVendedores.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1409" y="953"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="repositorios.RepositorioClientesLista" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/repositorios/RepositorioClientesLista.java" binary="false" 
+  <class id="4" language="java" name="Controller.ControleVendas" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Controller/ControleVendas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="615" y="1241"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="Model.Cliente" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2917" y="1640"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="Model.Funcionario" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Funcionario.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1658" y="354"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="Model.Marceneiro" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Marceneiro.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4889" y="688"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="Model.Pessoa" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Pessoa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3025" y="1065"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="Model.Vendedor" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Vendedor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4927" y="1008"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="Model.RepositorioClientesLista" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/RepositorioClientesLista.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1565" y="619"/>    
+    <position height="-1" width="-1" x="2064" y="1838"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="repositorios.RepositorioFuncionariosLista" 
-    project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/repositorios/RepositorioFuncionariosLista.java" binary="false" 
+  <class id="11" language="java" name="Model.RepositorioFuncionariosLista" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/RepositorioFuncionariosLista.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1526" y="1060"/>    
+    <position height="-1" width="-1" x="1982" y="1038"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="repositorios.RepositorioVendas" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/repositorios/RepositorioVendas.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1554" y="204"/>    
+  <class id="12" language="java" name="Model.Contato" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Contato.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4011" y="1112"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="7" language="java" name="interfaces.IRepositorioPessoas" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/interfaces/IRepositorioPessoas.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1992" y="771"/>    
+  <class id="13" language="java" name="Model.Fabrica" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Fabrica.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3533" y="3166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="Model.Frete" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Frete.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3460" y="2026"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="15" language="java" name="Model.IRepositorioPessoas" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/IRepositorioPessoas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1520" y="1592"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="8" language="java" name="interfaces.IRepositorioVendas" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/interfaces/IRepositorioVendas.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2032" y="220"/>    
+  <interface id="16" language="java" name="Model.IRepositorioVendas" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/IRepositorioVendas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="819" y="1946"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="9" language="java" name="dados.Localizacao" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Localizacao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="756" y="1125"/>    
+  <class id="17" language="java" name="Model.Localizacao" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Localizacao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3625" y="1492"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="dados.Vendedor" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Vendedor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="255" y="1223"/>    
+  <class id="18" language="java" name="Model.MesaDeCantoRedonda" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/MesaDeCantoRedonda.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1925" y="2912"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="dados.Marceneiro" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Marceneiro.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1399" y="1496"/>    
+  <class id="19" language="java" name="Model.PessoaNaoEncontradaException" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/PessoaNaoEncontradaException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="6013" y="1872"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="dados.Pessoa" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Pessoa.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1112" y="866"/>    
+  <class id="20" language="java" name="Model.Produto" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Produto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3478" y="2579"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="dados.Cliente" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1069" y="376"/>    
+  <enumeration id="21" language="java" name="Model.Produto.Cor" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Produto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="501" y="3234"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="22" language="java" name="Model.RepositorioVendas" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/RepositorioVendas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1646" y="2333"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="dados.MesaDeCantoRedonda" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/MesaDeCantoRedonda.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="125" y="1732"/>    
+  <class id="23" language="java" name="Model.Venda" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/Model/Venda.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2613" y="2353"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="dados.Produto" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Produto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="39" y="932"/>    
+  <class id="24" language="java" name="View.Cadastrar" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/View/Cadastrar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4075" y="2588"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="dados.Frete" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Frete.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="440" y="938"/>    
+  <class id="25" language="java" name="View.Login" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/View/Login.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4519" y="2466"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="dados.Funcionario" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Funcionario.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="725" y="1675"/>    
+  <class id="26" language="java" name="View.Relatorios" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/View/Relatorios.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4894" y="2434"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="dados.Contato" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Contato.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="676" y="610"/>    
+  <class id="27" language="java" name="View.Vendas" project="GerenciadorMovelariaUniversidade" 
+    file="/GerenciadorMovelariaUniversidade/src/View/Vendas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2554" y="3268"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="dados.Venda" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/dados/Venda.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="182" y="276"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="20" language="java" name="fachada.Fachada" project="GerenciadorMovelariaUniversidade" 
-    file="/GerenciadorMovelariaUniversidade/src/fachada/Fachada.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="460" width="373" x="3335" y="325"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <association id="21">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="22" name="cliente">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="23" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="24">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <association id="25">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="26" name="vendedores"/>      
-      <multiplicity id="27" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="28">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="29" name="vendedor">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="30" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="29" name="vendas"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="31">    
-    <end type="SOURCE" refId="20" navigable="false">      
+    <end type="SOURCE" refId="27" navigable="false">      
       <attribute id="32" name="instance"/>      
       <multiplicity id="33" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
+    <end type="TARGET" refId="27" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="34">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="8"/>  
-  </realization>  
-  <realization id="35">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <association id="36">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="37" name="clientes">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="38" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="34">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="35" name="instance"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="26" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="39">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="40" name="funcionarios">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="41" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="37">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="38" name="cliente"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="42">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <association id="43">    
+  <association id="40">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="44" name="clientes">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="45" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+      <attribute id="41" name="vendas"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="43">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="44" name="fabrica"/>      
+      <multiplicity id="45" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="46">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="17"/>  
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="6"/>  
   </generalization>  
-  <association id="47">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="48" name="contato">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="49" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <realization id="47">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="15"/>  
+  </realization>  
+  <association id="48">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="49" name="tampo"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
+    <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="50">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="51" name="vendas"/>      
-      <multiplicity id="52" minimum="0" maximum="1"/>    
+  <association id="51">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="52" name="usuario"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="54">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="55" name="instance"/>      
+      <multiplicity id="56" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="53">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="54" name="vendedores">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="55" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="57">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="58" name="instance"/>      
+      <multiplicity id="59" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="56">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="57" name="endereco">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="58" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="60">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="61" name="fabrica"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="63">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <association id="64">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="65" name="endereco"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="68" name="contato"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="71" name="pes"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="74" name="corList"/>      
+      <multiplicity id="75" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="77" name="endereco"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="80" name="listaDeProdutos"/>      
+      <multiplicity id="81" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="83" name="vendas"/>      
+      <multiplicity id="84" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="86" name="frete"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="88">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="89">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="90" name="funcionarios"/>      
+      <multiplicity id="91" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="92">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="93" name="vendedor"/>      
+      <multiplicity id="94" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="59">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="60" name="clientes"/>      
-      <multiplicity id="61" minimum="0" maximum="1"/>    
+  <nesting id="95">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="21"/>  
+  </nesting>  
+  <association id="96">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="97" name="produto"/>      
+      <multiplicity id="98" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="99">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="100" name="clientes"/>      
+      <multiplicity id="101" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="62">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="63" name="vendas">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="64" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <generalization id="102">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="103">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="104" name="clientes"/>      
+      <multiplicity id="105" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="65">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="66" name="vendas">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="67" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="68">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="69" name="produto">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="70" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <generalization id="106">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="107">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="108" name="clientes"/>      
+      <multiplicity id="109" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="71">    
+  <association id="110">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="111" name="vendedores"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="113">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="114" name="vendedores"/>      
+      <multiplicity id="115" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="116">    
     <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <generalization id="72">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <association id="73">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="74" name="endereco">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="75" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="76">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="77" name="frete">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="78" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="79">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="12"/>  
+    <end type="TARGET" refId="15"/>  
+  </realization>  
+  <generalization id="117">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="20"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
